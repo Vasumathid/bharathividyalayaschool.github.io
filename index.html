@@ -1,172 +1,155 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bharathi Vidyalaya Nursery and Primary School | Best School in Arni</title>
+<title>Bharathi Vidyalaya Nursery and Primary School</title>
 
-<meta name="description" content="Bharathi Vidyalaya Nursery and Primary School in Arni offers quality English medium education from Pre-KG to 8th standard with strong values and discipline.">
-<meta name="keywords" content="School in Arni, Best School Arni, Bharathi Vidyalaya, Nursery School Arni">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --primary:#004080;
-  --secondary:#ff9800;
-  --bg:#f7f9fc;
+  --primary:#0f172a;
+  --accent:#2563eb;
+  --bg:#f8fafc;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  font-family:'Poppins',sans-serif;
+  font-family:'Inter',sans-serif;
   background:var(--bg);
-  color:#333;
+  color:var(--primary);
 }
 
 /* CONTAINER */
 .container{
-  max-width:1200px;
+  max-width:1100px;
   margin:auto;
-  padding:0 20px;
+  padding:0 15px;
 }
 
 /* NAV */
 nav{
+  background:white;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
   position:sticky;
   top:0;
-  background:white;
-  box-shadow:0 2px 20px rgba(0,0,0,0.05);
-  z-index:1000;
 }
 .nav-inner{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 0;
 }
-nav h2{color:var(--primary);}
+nav h2{font-size:16px;}
 nav button{
-  background:var(--primary);
-  color:white;
+  background:#e2e8f0;
   border:none;
-  padding:6px 10px;
+  padding:5px 8px;
   margin-left:5px;
   border-radius:5px;
+  font-size:12px;
 }
 
 /* HERO */
 .hero{
-  height:90vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
   text-align:center;
-  color:white;
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-  url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') center/cover;
+  padding:60px 10px;
+  background:white;
 }
-.hero h1{font-size:40px;}
-.hero p{margin:15px 0;}
-
+.hero h1{font-size:22px;}
+.hero p{font-size:14px;margin:10px 0;color:#555;}
 .btn{
-  background:var(--secondary);
-  padding:14px 28px;
-  border-radius:30px;
+  display:inline-block;
+  background:var(--accent);
   color:white;
+  padding:10px 16px;
+  border-radius:6px;
   text-decoration:none;
+  font-size:14px;
 }
 
 /* SECTION */
-.section{padding:80px 0;}
+.section{padding:40px 0;}
 .section h2{
   text-align:center;
-  margin-bottom:40px;
-  color:var(--primary);
+  font-size:18px;
+  margin-bottom:20px;
 }
 
 /* GRID */
 .grid{
   display:grid;
-  gap:20px;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
 }
-
-/* CARD */
 .card{
   background:white;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* GALLERY */
-.gallery img{
-  width:100%;
+  padding:15px;
   border-radius:10px;
+  border:1px solid #eee;
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* CTA */
-.cta{
-  background:var(--primary);
-  color:white;
-  text-align:center;
-  padding:60px 20px;
-  border-radius:20px;
+/* IMAGE */
+.image{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-top:10px;
 }
 
 /* FORM */
-form{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
 input,textarea{
   width:100%;
-  max-width:400px;
-  padding:12px;
-  margin:10px;
+  padding:10px;
+  margin:8px 0;
+  border:1px solid #ddd;
   border-radius:5px;
-  border:1px solid #ccc;
 }
 .submit{
-  background:var(--primary);
+  width:100%;
+  background:var(--accent);
   color:white;
-  padding:12px 25px;
+  padding:10px;
   border:none;
   border-radius:5px;
 }
 
-/* MAP */
-iframe{
-  width:100%;
-  height:350px;
-  border-radius:10px;
-}
-
 /* FOOTER */
 footer{
-  background:#002b5c;
-  color:white;
+  background:white;
+  padding:20px;
   text-align:center;
-  padding:30px;
+  border-top:1px solid #eee;
 }
 
-/* FLOAT */
-.whatsapp,.call{
-  position:fixed;
-  right:15px;
-  padding:14px;
-  border-radius:50%;
-  color:white;
+/* DESKTOP */
+@media(min-width:768px){
+  .hero h1{font-size:40px;}
+  .hero p{font-size:16px;}
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .image{
+    height:220px;
+  }
 }
-.whatsapp{bottom:20px;background:#25D366;}
-.call{bottom:90px;background:#007bff;}
+
+@media(min-width:1024px){
+  .grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
 </style>
-
 </head>
 
 <body>
@@ -182,49 +165,36 @@ footer{
 </nav>
 
 <section class="hero">
-  <div>
-    <h1 id="title">Admissions Open 2026-27</h1>
-    <p id="tagline">Building Strong Foundations for Bright Futures</p>
-    <a href="#form" class="btn">Apply Now</a>
-  </div>
+  <h1 id="title">Admissions Open</h1>
+  <p id="tagline">Building Strong Foundations</p>
+  <a href="#form" class="btn">Apply Now</a>
 </section>
 
 <section class="section">
   <div class="container">
-    <h2>Why Choose Us</h2>
+    <h2>Achievements</h2>
     <div class="grid">
-      <div class="card">Smart Classes & Library</div>
-      <div class="card">Transport Across Arni</div>
-      <div class="card">CCTV & Safety</div>
-      <div class="card">Karate, Yoga, Spoken Courses</div>
+
+      <div class="card">
+        <h3>🎭 Arangetram</h3>
+        <p>Students performed Arangetram at 3rd standard.</p>
+        <img class="image" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c">
+      </div>
+
+      <div class="card">
+        <h3>🏆 Sports</h3>
+        <p>Students win prizes in interschool events.</p>
+        <img class="image" src="https://images.unsplash.com/photo-1526676037777-05a232554f77">
+      </div>
+
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <h2>Gallery</h2>
-    <div class="grid">
-      <img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
-      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
-      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="cta">
-      <h2>Enroll Your Child Today</h2>
-      <p>Limited seats available</p>
-    </div>
-  </div>
-</section>
-
-<section id="form" class="section">
-  <div class="container">
-    <h2>Admission Form</h2>
-    <form onsubmit="sendWhatsApp(event)">
+    <h2>Admission</h2>
+    <form id="form" onsubmit="sendWhatsApp(event)">
       <input id="name" placeholder="Student Name" required>
       <input id="class" placeholder="Class" required>
       <input id="phone" placeholder="Phone" required>
@@ -234,39 +204,24 @@ footer{
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <h2>Location</h2>
-    <iframe src="https://maps.google.com/maps?q=arni%20tiruvannamalai&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-  </div>
-</section>
-
 <footer>
   <p>© Bharathi Vidyalaya School</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/918015748739">💬</a>
-<a class="call" href="tel:8015748739">📞</a>
-
 <script>
 function sendWhatsApp(e){
   e.preventDefault();
-  let name=document.getElementById("name").value;
-  let cls=document.getElementById("class").value;
-  let phone=document.getElementById("phone").value;
-  let msg=document.getElementById("msg").value;
-
-  let text=`Admission Inquiry:%0AName: ${name}%0AClass: ${cls}%0APhone: ${phone}%0AMessage: ${msg}`;
+  let text=`Name:${name.value}%0AClass:${class.value}%0APhone:${phone.value}`;
   window.open(`https://wa.me/918015748739?text=${text}`);
 }
 
 function setLang(lang){
 if(lang=="ta"){
-document.getElementById("title").innerText="சேர்க்கை நடைபெறுகிறது";
-document.getElementById("tagline").innerText="எண்ணிய முடிதல் வேண்டும்";
+title.innerText="சேர்க்கை நடைபெறுகிறது";
+tagline.innerText="எண்ணிய முடிதல் வேண்டும்";
 }else{
-document.getElementById("title").innerText="Admissions Open 2026-27";
-document.getElementById("tagline").innerText="Building Strong Foundations";
+title.innerText="Admissions Open";
+tagline.innerText="Building Strong Foundations";
 }
 }
 </script>
