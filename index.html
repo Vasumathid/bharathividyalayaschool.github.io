@@ -4,18 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bharathi Vidyalaya Nursery and Primary School</title>
+<title>Bharathi Vidyalaya Nursery and Primary School | Arni</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<meta name="description" content="Quality English medium school in Arni from Pre-KG to 8th standard with strong values and holistic development.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --primary:#0f172a;
   --accent:#2563eb;
+  --muted:#64748b;
   --bg:#f8fafc;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
 
 body{
   font-family:'Inter',sans-serif;
@@ -23,137 +28,167 @@ body{
   color:var(--primary);
 }
 
-/* CONTAINER */
+/* LAYOUT */
 .container{
   max-width:1100px;
   margin:auto;
-  padding:0 15px;
+  padding:0 20px;
 }
 
 /* NAV */
 nav{
-  background:white;
-  padding:12px 0;
-  border-bottom:1px solid #eee;
   position:sticky;
   top:0;
+  background:white;
+  border-bottom:1px solid #eee;
+  z-index:100;
 }
 .nav-inner{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  padding:15px 0;
 }
-nav h2{font-size:16px;}
+nav h2{font-size:18px;font-weight:600;}
 nav button{
   background:#e2e8f0;
   border:none;
-  padding:5px 8px;
+  padding:6px 10px;
   margin-left:5px;
-  border-radius:5px;
-  font-size:12px;
+  border-radius:6px;
 }
 
 /* HERO */
 .hero{
-  text-align:center;
-  padding:60px 10px;
   background:white;
+  text-align:center;
+  padding:100px 20px;
 }
-.hero h1{font-size:22px;}
-.hero p{font-size:14px;margin:10px 0;color:#555;}
+.hero h1{
+  font-size:40px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+.hero p{
+  color:var(--muted);
+  margin-bottom:20px;
+}
 .btn{
-  display:inline-block;
   background:var(--accent);
   color:white;
-  padding:10px 16px;
-  border-radius:6px;
+  padding:12px 24px;
+  border-radius:8px;
   text-decoration:none;
-  font-size:14px;
+  transition:0.3s;
+}
+.btn:hover{
+  opacity:0.9;
 }
 
 /* SECTION */
-.section{padding:40px 0;}
+.section{
+  padding:70px 0;
+}
 .section h2{
   text-align:center;
-  font-size:18px;
-  margin-bottom:20px;
+  margin-bottom:40px;
 }
 
 /* GRID */
 .grid{
   display:grid;
-  gap:15px;
+  gap:20px;
 }
 .card{
   background:white;
-  padding:15px;
+  padding:20px;
   border-radius:10px;
   border:1px solid #eee;
   transition:0.3s;
 }
 .card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transform:translateY(-6px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+.card h3{
+  color:var(--accent);
+  margin-bottom:10px;
 }
 
-/* IMAGE */
-.image{
+/* SPLIT */
+.split{
+  display:grid;
+  gap:30px;
+}
+.split img{
   width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:10px;
-  margin-top:10px;
+  border-radius:12px;
+}
+
+/* CTA */
+.cta{
+  background:var(--primary);
+  color:white;
+  text-align:center;
+  padding:50px 20px;
+  border-radius:16px;
 }
 
 /* FORM */
+form{
+  max-width:400px;
+  margin:auto;
+}
 input,textarea{
   width:100%;
   padding:10px;
-  margin:8px 0;
+  margin:10px 0;
   border:1px solid #ddd;
-  border-radius:5px;
+  border-radius:6px;
 }
 .submit{
   width:100%;
   background:var(--accent);
   color:white;
-  padding:10px;
+  padding:12px;
   border:none;
-  border-radius:5px;
+  border-radius:6px;
 }
 
 /* FOOTER */
 footer{
   background:white;
-  padding:20px;
   text-align:center;
+  padding:30px;
   border-top:1px solid #eee;
 }
 
-/* DESKTOP */
-@media(min-width:768px){
-  .hero h1{font-size:40px;}
-  .hero p{font-size:16px;}
-
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .image{
-    height:220px;
-  }
+/* ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
 }
 
+/* RESPONSIVE */
+@media(min-width:768px){
+  .hero h1{font-size:52px;}
+  .grid{grid-template-columns:repeat(2,1fr);}
+  .split{grid-template-columns:1fr 1fr;}
+}
 @media(min-width:1024px){
-  .grid{
-    grid-template-columns:repeat(3,1fr);
-  }
+  .grid{grid-template-columns:repeat(3,1fr);}
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="container nav-inner">
     <h2>Bharathi Vidyalaya</h2>
@@ -164,37 +199,80 @@ footer{
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <h1 id="title">Admissions Open</h1>
-  <p id="tagline">Building Strong Foundations</p>
-  <a href="#form" class="btn">Apply Now</a>
+  <h1 id="title">Admissions Open 2026–27</h1>
+  <p id="tagline">Building Strong Foundations for Bright Futures</p>
+  <a href="#admission" class="btn">Apply Now</a>
 </section>
 
-<section class="section">
+<!-- ABOUT -->
+<section class="section reveal">
   <div class="container">
-    <h2>Achievements</h2>
-    <div class="grid">
+    <h2 id="aboutTitle">About Us</h2>
+    <p id="aboutText" style="max-width:800px;margin:auto;text-align:center;color:var(--muted);">
+      Bharathi Vidyalaya Nursery and Primary School is dedicated to nurturing young minds with discipline, values and quality education. 
+      We provide a safe and inspiring environment where every child grows with confidence and knowledge.
+    </p>
+  </div>
+</section>
 
-      <div class="card">
-        <h3>🎭 Arangetram</h3>
-        <p>Students performed Arangetram at 3rd standard.</p>
-        <img class="image" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c">
-      </div>
-
-      <div class="card">
-        <h3>🏆 Sports</h3>
-        <p>Students win prizes in interschool events.</p>
-        <img class="image" src="https://images.unsplash.com/photo-1526676037777-05a232554f77">
-      </div>
-
+<!-- VISION & MISSION -->
+<section class="section reveal">
+  <div class="container split">
+    <div>
+      <h2 id="visionTitle">Our Vision</h2>
+      <p id="visionText">To nurture confident and responsible individuals with strong values.</p>
+    </div>
+    <div>
+      <h2 id="missionTitle">Our Mission</h2>
+      <p id="missionText">To provide quality education with discipline, activities and holistic development.</p>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- ACHIEVEMENTS -->
+<section class="section reveal">
   <div class="container">
-    <h2>Admission</h2>
-    <form id="form" onsubmit="sendWhatsApp(event)">
+    <h2 id="achieveTitle">Achievements</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🎭 Arangetram</h3>
+        <p id="achieve1">Students performed Arangetram at 3rd standard.</p>
+      </div>
+      <div class="card">
+        <h3>🏆 Sports</h3>
+        <p id="achieve2">Students win prizes in interschool competitions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSION -->
+<section id="admission" class="section reveal">
+  <div class="container">
+    <h2 id="admissionTitle">Why Join Bharathi Vidyalaya?</h2>
+    <div class="grid">
+      <div class="card">Strong Academic Foundation</div>
+      <div class="card">Safe Environment</div>
+      <div class="card">Holistic Development</div>
+      <div class="card">Transport Facility</div>
+      <div class="card">Student Achievements</div>
+      <div class="card">Personal Attention</div>
+    </div>
+
+    <div class="cta" style="margin-top:40px;">
+      <h3>Enroll Your Child Today</h3>
+      <p>Limited seats available</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="section reveal">
+  <div class="container">
+    <h2>Admission Form</h2>
+    <form onsubmit="sendWhatsApp(event)">
       <input id="name" placeholder="Student Name" required>
       <input id="class" placeholder="Class" required>
       <input id="phone" placeholder="Phone" required>
@@ -215,15 +293,25 @@ function sendWhatsApp(e){
   window.open(`https://wa.me/918015748739?text=${text}`);
 }
 
+/* language */
 function setLang(lang){
 if(lang=="ta"){
 title.innerText="சேர்க்கை நடைபெறுகிறது";
 tagline.innerText="எண்ணிய முடிதல் வேண்டும்";
 }else{
-title.innerText="Admissions Open";
+title.innerText="Admissions Open 2026–27";
 tagline.innerText="Building Strong Foundations";
 }
 }
+
+/* scroll animation */
+window.addEventListener('scroll',()=>{
+  document.querySelectorAll('.reveal').forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-100){
+      el.classList.add('active');
+    }
+  });
+});
 </script>
 
 </body>
