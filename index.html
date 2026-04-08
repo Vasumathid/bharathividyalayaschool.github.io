@@ -3,88 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bharathi Vidyalaya School, Arni</title>
+<title>Bharathi Vidyalaya Nursery and Primary School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body { margin:0; font-family: Arial, sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#f5f7fb;}
 
-/* Navbar */
-nav {
-  background:#004080;
-  padding:10px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+/* NAV */
+nav{
+  position:sticky;top:0;
+  background:white;
+  display:flex;justify-content:space-between;
+  align-items:center;padding:12px 15px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
-nav h2 { color:white; margin:0; }
-nav a {
-  color:white;
-  margin:0 10px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-/* Hero */
-.hero {
-  background:url('https://images.unsplash.com/photo-1577896851231-70ef18881754') center/cover no-repeat;
-  color:white;
-  text-align:center;
-  padding:120px 20px;
-}
-.hero h1 { font-size:42px; }
-.btn {
-  background:orange;
-  padding:10px 20px;
-  color:white;
-  text-decoration:none;
-  border-radius:5px;
+nav h2{font-size:14px;color:#004080;}
+nav button{
+  border:none;padding:6px 10px;margin-left:5px;
+  background:#004080;color:white;border-radius:5px;
 }
 
-/* Sections */
-.section { padding:50px 20px; text-align:center; }
-.section h2 { color:#004080; }
-
-/* Cards */
-.cards {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
+/* HERO */
+.hero{
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') center/cover;
+  color:white;text-align:center;padding:90px 20px;
 }
-.card {
-  width:250px;
-  margin:15px;
-  padding:20px;
-  border-radius:10px;
-  background:#f2f2f2;
+.hero h1{font-size:26px;margin-bottom:10px;}
+.hero p{font-size:14px;margin-bottom:15px;}
+.btn{
+  background:#ff9800;color:white;
+  padding:10px 20px;border-radius:25px;text-decoration:none;
 }
 
-/* Gallery */
-.gallery img {
-  width:250px;
-  margin:10px;
-  border-radius:10px;
+/* SECTION */
+.section{padding:40px 20px;text-align:center;}
+.section h2{color:#004080;margin-bottom:10px;}
+
+/* CARDS */
+.cards{display:flex;flex-direction:column;gap:15px;}
+.card{
+  background:white;padding:15px;border-radius:12px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
-/* Footer */
-footer {
-  background:#004080;
-  color:white;
-  text-align:center;
-  padding:20px;
+/* SLIDER */
+.slide{display:none;}
+.slide img{width:100%;border-radius:12px;}
+
+/* FORM */
+input,textarea{
+  width:90%;padding:10px;margin:8px;border-radius:5px;border:1px solid #ccc;
+}
+.submit{
+  background:#004080;color:white;padding:10px 20px;border:none;border-radius:5px;
 }
 
-/* WhatsApp Button */
-.whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:green;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-  text-decoration:none;
-  font-size:20px;
+/* MAP */
+iframe{width:100%;height:250px;border:0;border-radius:12px;}
+
+/* FLOAT */
+.whatsapp, .call{
+  position:fixed;right:15px;
+  padding:12px;border-radius:50%;
+  color:white;text-decoration:none;
 }
+.whatsapp{bottom:20px;background:#25D366;}
+.call{bottom:80px;background:#007bff;}
 </style>
 
 </head>
@@ -94,60 +81,96 @@ footer {
 <nav>
   <h2>Bharathi Vidyalaya</h2>
   <div>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#admissions">Admissions</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('ta')">TA</button>
   </div>
 </nav>
 
 <section class="hero">
-  <h1>Admissions Open 2026-27</h1>
-  <p>Building Bright Futures with Quality Education</p>
+  <h1 id="title">Admissions Open 2026-27</h1>
+  <p id="tagline">Building Strong Foundations for Bright Futures</p>
   <a href="#contact" class="btn">Apply Now</a>
 </section>
 
-<section id="about" class="section">
-  <h2>About Us</h2>
-  <p>Bharathi Vidyalaya provides holistic education focusing on academics, discipline and values.</p>
+<section class="section">
+  <h2 id="aboutTitle">About Us</h2>
+  <p id="aboutText">
+  Bharathi Vidyalaya Nursery and Primary School provides English medium education from Pre-KG to 8th standard under Matriculation board.
+  </p>
 </section>
 
 <section class="section">
-  <h2>Our Facilities</h2>
+  <h2 id="facilityTitle">Facilities</h2>
   <div class="cards">
-    <div class="card">Smart Classrooms</div>
-    <div class="card">Library</div>
-    <div class="card">Playground</div>
-    <div class="card">Transport</div>
+    <div class="card">Smart Classrooms & Library</div>
+    <div class="card">Transport Facility Across Arni</div>
+    <div class="card">CCTV Security & Clean Water</div>
+    <div class="card">Karate, Yoga, Spoken English & Hindi</div>
   </div>
 </section>
 
-<section id="admissions" class="section">
-  <h2>Admissions</h2>
-  <p>Admissions are open for all classes. Contact us today to enroll.</p>
-</section>
-
-<section id="gallery" class="section">
+<section class="section">
   <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
-    <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b">
-    <img src="https://images.unsplash.com/photo-1584697964403-1c7bb82f0a7d">
-  </div>
+  <div class="slide"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350"></div>
+  <div class="slide"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"></div>
+  <div class="slide"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"></div>
+</section>
+
+<section class="section">
+  <h2>Admission Form</h2>
+  <form>
+    <input type="text" placeholder="Student Name" required><br>
+    <input type="text" placeholder="Class" required><br>
+    <input type="tel" placeholder="Phone Number" required><br>
+    <textarea placeholder="Message"></textarea><br>
+    <button class="submit">Submit</button>
+  </form>
+</section>
+
+<section class="section">
+  <h2>Location</h2>
+  <iframe src="https://maps.google.com/maps?q=arni%20tiruvannamalai&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 </section>
 
 <section id="contact" class="section">
-  <h2>Contact Us</h2>
-  <p>📍 Arni</p>
+  <h2>Contact</h2>
+  <p>No.38, Chinnakadai Street, Kosapalayam, Arni</p>
   <p>📞 8015748739</p>
 </section>
 
-<footer>
-  <p>© 2026 Bharathi Vidyalaya School</p>
-</footer>
+<a class="whatsapp" href="https://wa.me/918015748739">💬</a>
+<a class="call" href="tel:8015748739">📞</a>
 
-<a class="whatsapp" href="https://wa.me/919876543210">💬</a>
+<script>
+/* SLIDER */
+let i=0;
+function slideShow(){
+  let x=document.getElementsByClassName("slide");
+  for(let j=0;j<x.length;j++){x[j].style.display="none";}
+  i++;
+  if(i>x.length){i=1;}
+  x[i-1].style.display="block";
+  setTimeout(slideShow,3000);
+}
+slideShow();
+
+/* LANGUAGE */
+function setLang(lang){
+if(lang=="ta"){
+document.getElementById("title").innerText="சேர்க்கை நடைபெறுகிறது";
+document.getElementById("tagline").innerText="எண்ணிய முடிதல் வேண்டும்";
+document.getElementById("aboutTitle").innerText="எங்களை பற்றி";
+document.getElementById("aboutText").innerText="பாரதி வித்யாலயா பள்ளி Pre-KG முதல் 8ம் வகுப்பு வரை தரமான கல்வி வழங்குகிறது.";
+document.getElementById("facilityTitle").innerText="வசதிகள்";
+}else{
+document.getElementById("title").innerText="Admissions Open 2026-27";
+document.getElementById("tagline").innerText="Building Strong Foundations for Bright Futures";
+document.getElementById("aboutTitle").innerText="About Us";
+document.getElementById("aboutText").innerText="Bharathi Vidyalaya Nursery and Primary School provides English medium education from Pre-KG to 8th standard under Matriculation board.";
+document.getElementById("facilityTitle").innerText="Facilities";
+}
+}
+</script>
 
 </body>
 </html>
