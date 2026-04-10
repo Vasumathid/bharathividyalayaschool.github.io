@@ -14,7 +14,9 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+html {
+  scroll-behavior: smooth;
+}
     body {
       font-family: 'Poppins', sans-serif;
       background: #f5f7fb;
@@ -48,21 +50,21 @@
 
     /* HERO */
     .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('https://images.openai.com/static-rsc-4/GQs5n_FT6n_qxt1u-7KyLF5IfWPA_LixtyHC-grwGmnGGKlV66YSYjSokwPAg0EDDRRyM3eb4NUn3GQgfKn4l0FkuEF0mpesjqnn2qdGPJeOTfNUVHRZVdpKiL0Pc4LpC3rH8rEHONsPpgtvdyy6dv9TQvV33Z_ThgSTP1LCmXM?purpose=inline') center/cover;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.openai.com/static-rsc-4/GQs5n_FT6n_qxt1u-7KyLF5IfWPA_LixtyHC-grwGmnGGKlV66YSYjSokwPAg0EDDRRyM3eb4NUn3GQgfKn4l0FkuEF0mpesjqnn2qdGPJeOTfNUVHRZVdpKiL0Pc4LpC3rH8rEHONsPpgtvdyy6dv9TQvV33Z_ThgSTP1LCmXM?purpose=inline') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 90px 20px;
+      padding: 120px 20px;
     }
 
     .hero h1 {
-      font-size: 26px;
+      font-size: 45px;
       margin-bottom: 10px;
     }
 
     .hero p {
-      font-size: 14px;
-      margin-bottom: 15px;
+      font-size: 20px;
+      margin-bottom: 20px;
     }
 
     .btn {
@@ -73,9 +75,12 @@
       text-decoration: none;
     }
 
+    .btn:hover {
+  background: darkorange;
+}
     /* SECTION */
     .section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
@@ -176,7 +181,7 @@
     <p style="margin-top:10px;font-size:14px;">
       A caring school in Arni where children learn with discipline, confidence and strong values.
     </p>
-    <a href="#contact" class="btn">Apply Now</a>
+    <a href="#admission" class="btn">Apply Now</a>
   </section>
 
   <section class="section">
@@ -213,7 +218,7 @@
     <div class="slide"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"></div>
   </section>
 
-  <section class="section">
+  <section class="section" id="admission">
     <h2>Apply for Admission</h2>
     <p style="font-size:14px;color:#555;">
       Limited seats available. Contact us today to secure your child’s future.
@@ -230,7 +235,7 @@
   <section class="section">
     <h2>Visit Our School</h2>
     <iframe
-      src="https://maps.google.com/maps?q=bharathi%20vidyalaya%20arni%20kosapalayam&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62283.46159251705!2d79.283749!3d12.666594!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad29213ee96809%3A0x6350a2cb68f2bd1c!2sBharathi%20Vidyalaya%20Nursery%20%26%20Primary%20School!5e0!3m2!1sen!2sus!4v1775783205593!5m2!1sen!2sus&output=embed"></iframe>
   </section>
 
   <section id="contact" class="section">
