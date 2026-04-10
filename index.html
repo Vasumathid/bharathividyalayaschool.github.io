@@ -1,195 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bharathi Vidyalaya Nursery and Primary School</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bharathi Vidyalaya Nursery and Primary School</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif;background:#f5f7fb;}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* NAV */
-nav{
-  position:sticky;top:0;
-  background:white;
-  display:flex;justify-content:space-between;
-  align-items:center;padding:12px 15px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.08);
-}
-nav h2{font-size:14px;color:#004080;}
-nav button{
-  border:none;padding:6px 10px;margin-left:5px;
-  background:#004080;color:white;border-radius:5px;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fb;
+    }
 
-/* HERO */
-.hero{
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-  url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') center/cover;
-  color:white;text-align:center;padding:90px 20px;
-}
-.hero h1{font-size:26px;margin-bottom:10px;}
-.hero p{font-size:14px;margin-bottom:15px;}
-.btn{
-  background:#ff9800;color:white;
-  padding:10px 20px;border-radius:25px;text-decoration:none;
-}
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 15px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
 
-/* SECTION */
-.section{padding:40px 20px;text-align:center;}
-.section h2{color:#004080;margin-bottom:10px;}
+    nav h2 {
+      font-size: 14px;
+      color: #004080;
+    }
 
-/* CARDS */
-.cards{display:flex;flex-direction:column;gap:15px;}
-.card{
-  background:white;padding:15px;border-radius:12px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
+    nav button {
+      border: none;
+      padding: 6px 10px;
+      margin-left: 5px;
+      background: #004080;
+      color: white;
+      border-radius: 5px;
+    }
 
-/* SLIDER */
-.slide{display:none;}
-.slide img{width:100%;border-radius:12px;}
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://images.openai.com/static-rsc-4/GQs5n_FT6n_qxt1u-7KyLF5IfWPA_LixtyHC-grwGmnGGKlV66YSYjSokwPAg0EDDRRyM3eb4NUn3GQgfKn4l0FkuEF0mpesjqnn2qdGPJeOTfNUVHRZVdpKiL0Pc4LpC3rH8rEHONsPpgtvdyy6dv9TQvV33Z_ThgSTP1LCmXM?purpose=inline') center/cover;
+      color: white;
+      text-align: center;
+      padding: 90px 20px;
+    }
 
-/* FORM */
-input,textarea{
-  width:90%;padding:10px;margin:8px;border-radius:5px;border:1px solid #ccc;
-}
-.submit{
-  background:#004080;color:white;padding:10px 20px;border:none;border-radius:5px;
-}
+    .hero h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
 
-/* MAP */
-iframe{width:100%;height:250px;border:0;border-radius:12px;}
+    .hero p {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
 
-/* FLOAT */
-.whatsapp, .call{
-  position:fixed;right:15px;
-  padding:12px;border-radius:50%;
-  color:white;text-decoration:none;
-}
-.whatsapp{bottom:20px;background:#25D366;}
-.call{bottom:80px;background:#007bff;}
-</style>
+    .btn {
+      background: #ff9800;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    /* SLIDER */
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    /* FORM */
+    input,
+    textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .submit {
+      background: #004080;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    /* MAP */
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: 0;
+      border-radius: 12px;
+    }
+
+    /* FLOAT */
+    .whatsapp,
+    .call {
+      position: fixed;
+      right: 15px;
+      padding: 12px;
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+    }
+
+    .whatsapp {
+      bottom: 20px;
+      background: #25D366;
+    }
+
+    .call {
+      bottom: 80px;
+      background: #007bff;
+    }
+  </style>
 
 </head>
 
 <body>
 
-<nav>
-  <h2>Bharathi Vidyalaya</h2>
-  <div>
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('ta')">TA</button>
-  </div>
-</nav>
+  <nav>
+    <h2>Bharathi Vidyalaya</h2>
+    <div>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('ta')">TA</button>
+    </div>
+  </nav>
 
-<section class="hero">
-  <h1 id="schoolname">Bharathi Vidyalaya Nursery and Primary School</h1>
-  <h3 id="title">Admissions Open 2026-27</h3>
-  <p id="tagline">எண்ணிய முடிதல் வேண்டும்</p>
-  <p style="margin-top:10px;font-size:14px;">
-A caring school in Arni where children learn with discipline, confidence and strong values.
-</p>
-  <a href="#contact" class="btn">Apply Now</a>
-</section>
+  <section class="hero">
+    <h1 id="schoolname">Bharathi Vidyalaya Nursery and Primary School</h1>
+    <p id="tagline">எண்ணிய முடிதல் வேண்டும்</p>
+    <h3 id="title">Admissions Open 2026-27</h3>
 
-<section class="section">
-  <h2 id="aboutTitle">About Us</h2>
-  <p id="aboutText">
-Bharathi Vidyalaya Nursery and Primary School, located in Arni, provides English medium education from Pre-KG to 8th standard under Matriculation syllabus.
+    <p style="margin-top:10px;font-size:14px;">
+      A caring school in Arni where children learn with discipline, confidence and strong values.
+    </p>
+    <a href="#contact" class="btn">Apply Now</a>
+  </section>
 
-We focus on building a strong foundation for every child through discipline, individual attention and value-based education. Our aim is not only academic success, but also developing confidence, character and responsibility in students.
+  <section class="section">
+    <h2 id="aboutTitle">About Us</h2>
+    <p id="aboutText">
+      Bharathi Vidyalaya Nursery and Primary School, located in Arni, provides English medium education from Pre-KG to
+      8th standard under Matriculation syllabus.
 
-In a safe and caring environment, children are encouraged to learn, grow and express themselves with confidence.
-  
-  </p>
-</section>
+      We focus on building a strong foundation for every child through discipline, individual attention and value-based
+      education. Our aim is not only academic success, but also developing confidence, character and responsibility in
+      students.
 
-<section class="section">
-  <h2 id="facilityTitle">Facilities</h2>
-  <div class="cards">
-    <div class="card">Smart Classrooms with Activity-Based Learning</div>
-<div class="card">Well Maintained Library for Reading Habit</div>
-<div class="card">Safe Transport Facility Across Arni</div>
-<div class="card">CCTV Surveillance for Student Safety</div>
-<div class="card">Clean Drinking Water & Hygienic Toilets</div>
-<div class="card">Karate, Yoga, Spoken English & Spoken Hindi</div>
-  </div>
-</section>
+      In a safe and caring environment, children are encouraged to learn, grow and express themselves with confidence.
 
-<section class="section">
-  <h2>Our Students & Activities</h2>
-  <div class="slide"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350"></div>
-  <div class="slide"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"></div>
-  <div class="slide"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"></div>
-</section>
+    </p>
+  </section>
 
-<section class="section">
-  <h2>Apply for Admission</h2>
-<p style="font-size:14px;color:#555;">
-Limited seats available. Contact us today to secure your child’s future.
-</p>
-  <form>
-    <input type="text" placeholder="Student Name" required><br>
-    <input type="text" placeholder="Class" required><br>
-    <input type="tel" placeholder="Phone Number" required><br>
-    <textarea placeholder="Message"></textarea><br>
-    <button class="submit">Submit</button>
-  </form>
-</section>
+  <section class="section">
+    <h2 id="facilityTitle">Facilities</h2>
+    <div class="cards">
+      <div class="card">Smart Classrooms with Activity-Based Learning</div>
+      <div class="card">Well Maintained Library for Reading Habit</div>
+      <div class="card">Safe Transport Facility Across Arni</div>
+      <div class="card">CCTV Surveillance for Student Safety</div>
+      <div class="card">Clean Drinking Water & Hygienic Toilets</div>
+      <div class="card">Karate, Yoga, Spoken English & Spoken Hindi</div>
+    </div>
+  </section>
 
-<section class="section">
-  <h2>Visit Our School</h2>
-  <iframe src="https://maps.google.com/maps?q=bharathi%20vidyalaya%20arni%20kosapalayam&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-</section>
+  <section class="section">
+    <h2>Our Students & Activities</h2>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"></div>
+  </section>
+
+  <section class="section">
+    <h2>Apply for Admission</h2>
+    <p style="font-size:14px;color:#555;">
+      Limited seats available. Contact us today to secure your child’s future.
+    </p>
+    <form>
+      <input type="text" placeholder="Student Name" required><br>
+      <input type="text" placeholder="Class" required><br>
+      <input type="tel" placeholder="Phone Number" required><br>
+      <textarea placeholder="Message"></textarea><br>
+      <button class="submit">Submit</button>
+    </form>
+  </section>
+
+  <section class="section">
+    <h2>Visit Our School</h2>
+    <iframe
+      src="https://maps.google.com/maps?q=bharathi%20vidyalaya%20arni%20kosapalayam&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+  </section>
 
   <section id="contact" class="section">
-<h2>Contact Us</h2>
-<p>No.38, Chinnakadai Street, Kosapalayam, Arni, Tiruvannamalai District</p>
-<p>📞 8015748739</p>
-<p>📌 Easy access location within Arni town</p>
+    <h2>Contact Us</h2>
+    <p>No.38, Chinnakadai Street, Kosapalayam, Arni, Tiruvannamalai District</p>
+    <p>📞 8015748739</p>
+    <p>📌 Easy access location within Arni town</p>
   </section>
-  
-<a class="whatsapp" href="https://wa.me/918015748739">💬Whatsapp Us</a>
-<a class="call" href="tel:8015748739">📞Contact Now</a>
 
-<script>
-/* SLIDER */
-let i=0;
-function slideShow(){
-  let x=document.getElementsByClassName("slide");
-  for(let j=0;j<x.length;j++){x[j].style.display="none";}
-  i++;
-  if(i>x.length){i=1;}
-  x[i-1].style.display="block";
-  setTimeout(slideShow,3000);
-}
-slideShow();
+  <a class="whatsapp" href="https://wa.me/918015748739">💬Whatsapp Us</a>
+  <a class="call" href="tel:8015748739">📞Contact Now</a>
 
-/* LANGUAGE */
-function setLang(lang){
-if(lang=="ta"){
-document.getElementById("title").innerText="2026-27 ஆம் ஆண்டுக்கான மாணவர் சேர்க்கை நடைபெறுகிறது.";
-document.getElementById("tagline").innerText="எண்ணிய முடிதல் வேண்டும்";
-document.getElementById("aboutTitle").innerText="எங்களை பற்றி";
-document.getElementById("aboutText").innerText="ஆரனியில் அமைந்துள்ள பாரதி வித்யாலயா நர்சரி மற்றும் தொடக்கப் பள்ளி, மெட்ரிகுலேஷன் பாடத்திட்டத்தின் கீழ் ப்ரீ-கேஜி முதல் 8 ஆம் வகுப்பு வரை ஆங்கில வழிக் கல்வியை வழங்குகிறது."+
-"ஒழுக்கம், தனிப்பட்ட கவனம் மற்றும் விழுமியங்கள் சார்ந்த கல்வி ஆகியவற்றின் மூலம் ஒவ்வொரு குழந்தைக்கும் ஒரு வலுவான அடித்தளத்தை உருவாக்குவதில் நாங்கள் கவனம் செலுத்துகிறோம். கல்வி ரீதியான வெற்றி மட்டுமல்ல, மாணவர்களிடையே தன்னம்பிக்கை, நன்னடத்தை மற்றும் பொறுப்புணர்வை வளர்ப்பதும் எங்கள் நோக்கமாகும்."+
-"பாதுகாப்பான மற்றும் அன்பான சூழலில், குழந்தைகள் நம்பிக்கையுடன் கற்கவும், வளரவும், தங்களை வெளிப்படுத்தவும் ஊக்குவிக்கப்படுகிறார்கள்.";
-document.getElementById("facilityTitle").innerText="வசதிகள்";
-}else{
-document.getElementById("title").innerText="Admissions Open for 2026-27";
-document.getElementById("tagline").innerText="Building Strong Foundations for Bright Futures";
-document.getElementById("aboutTitle").innerText="About Us";
-document.getElementById("aboutText").innerText="Bharathi Vidyalaya Nursery and Primary School, located in Arni, provides English medium education from Pre-KG to 8th standard under Matriculation syllabus.\n"+
-  "We focus on building a strong foundation for every child through discipline, individual attention and value-based education. Our aim is not only academic success, but also developing confidence, character and responsibility in students."+
-"In a safe and caring environment, children are encouraged to learn, grow and express themselves with confidence.";
-document.getElementById("facilityTitle").innerText="Facilities";
-}
-}
-</script>
+  <script>
+    /* SLIDER */
+    let i = 0;
+    function slideShow() {
+      let x = document.getElementsByClassName("slide");
+      for (let j = 0; j < x.length; j++) { x[j].style.display = "none"; }
+      i++;
+      if (i > x.length) { i = 1; }
+      x[i - 1].style.display = "block";
+      setTimeout(slideShow, 3000);
+    }
+    slideShow();
+
+    /* LANGUAGE */
+    function setLang(lang) {
+      if (lang == "ta") {
+        document.getElementById("title").innerText = "2026-27 ஆம் ஆண்டுக்கான மாணவர் சேர்க்கை நடைபெறுகிறது.";
+        document.getElementById("tagline").innerText = "எண்ணிய முடிதல் வேண்டும்";
+        document.getElementById("aboutTitle").innerText = "எங்களை பற்றி";
+        document.getElementById("aboutText").innerText = "ஆரனியில் அமைந்துள்ள பாரதி வித்யாலயா நர்சரி மற்றும் தொடக்கப் பள்ளி, மெட்ரிகுலேஷன் பாடத்திட்டத்தின் கீழ் ப்ரீ-கேஜி முதல் 8 ஆம் வகுப்பு வரை ஆங்கில வழிக் கல்வியை வழங்குகிறது." +
+          "ஒழுக்கம், தனிப்பட்ட கவனம் மற்றும் விழுமியங்கள் சார்ந்த கல்வி ஆகியவற்றின் மூலம் ஒவ்வொரு குழந்தைக்கும் ஒரு வலுவான அடித்தளத்தை உருவாக்குவதில் நாங்கள் கவனம் செலுத்துகிறோம். கல்வி ரீதியான வெற்றி மட்டுமல்ல, மாணவர்களிடையே தன்னம்பிக்கை, நன்னடத்தை மற்றும் பொறுப்புணர்வை வளர்ப்பதும் எங்கள் நோக்கமாகும்." +
+          "பாதுகாப்பான மற்றும் அன்பான சூழலில், குழந்தைகள் நம்பிக்கையுடன் கற்கவும், வளரவும், தங்களை வெளிப்படுத்தவும் ஊக்குவிக்கப்படுகிறார்கள்.";
+        document.getElementById("facilityTitle").innerText = "வசதிகள்";
+      } else {
+        document.getElementById("title").innerText = "Admissions Open for 2026-27";
+        document.getElementById("tagline").innerText = "Building Strong Foundations for Bright Futures";
+        document.getElementById("aboutTitle").innerText = "About Us";
+        document.getElementById("aboutText").innerText = "Bharathi Vidyalaya Nursery and Primary School, located in Arni, provides English medium education from Pre-KG to 8th standard under Matriculation syllabus.\n" +
+          "We focus on building a strong foundation for every child through discipline, individual attention and value-based education. Our aim is not only academic success, but also developing confidence, character and responsibility in students." +
+          "In a safe and caring environment, children are encouraged to learn, grow and express themselves with confidence.";
+        document.getElementById("facilityTitle").innerText = "Facilities";
+      }
+    }
+  </script>
 
 </body>
+
 </html>
