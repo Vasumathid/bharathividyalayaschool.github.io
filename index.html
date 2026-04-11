@@ -84,7 +84,7 @@
       }
       /* SECTION */
       .section {
-        padding: 60px 20px;
+        padding: 70px 20px;
         text-align: center;
       }
 
@@ -95,16 +95,49 @@
 
       /* CARDS */
       .cards {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
       }
 
       .card {
-        background: white;
-        padding: 15px;
-        border-radius: 12px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        position: relative;
+        height: 200px;
+        border-radius: 15px;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      /* Background image */
+      .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      /* Overlay */
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      }
+
+      /* Text */
+      .card h3 {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        color: white;
+        z-index: 2;
+        font-size: 18px;
+      }
+
+      /* Hover effect */
+      .card:hover img {
+        transform: scale(1.1);
       }
 
       /* SLIDER */
@@ -168,8 +201,13 @@
 
   <body>
     <nav>
-      <h2>Bharathi Vidyalaya</h2>
+      <h2>Bharathi Vidyalaya Nursery and Primary School</h2>
+
       <div>
+        <a href="#about">About</a>
+        <a href="#academics">Academics</a>
+        <a href="#contact">Contact</a>
+
         <button onclick="setLang('en')">EN</button>
         <button onclick="setLang('ta')">TA</button>
       </div>
@@ -179,11 +217,14 @@
       <h1 id="schoolname">Bharathi Vidyalaya Nursery and Primary School</h1>
       <p id="tagline">எண்ணிய முடிதல் வேண்டும்</p>
       <h3 id="title">Admissions Open 2026-27</h3>
-
-      <p style="margin-top: 10px; font-size: 14px">
+      <p style="margin-top: 15px; font-weight: bold">
+        Limited Seats Available – Enroll Today
+      </p>
+      <p style="margin-top: 10px; font-size: 15px">
         A caring school in Arni where children learn with discipline, confidence
         and strong values.
       </p>
+      <a href="tel:8015748739" class="btn">Call Now</a>
       <a href="#admission" class="btn">Apply Now</a>
     </section>
 
@@ -202,19 +243,75 @@
     </section>
 
     <section class="section">
+      <h2>Principal’s Message</h2>
+      <img src="principal.jpg" style="width: 150px; border-radius: 10px" />
+      <p>
+        At Bharathi Vidyalaya, we believe every child has unique potential. Our
+        mission is to guide students with discipline, values and confidence to
+        succeed in life.
+      </p>
+    </section>
+    <section class="section">
+      <h2>Academics</h2>
+      <div class="cards">
+        <div class="card">Matriculation Curriculum</div>
+        <div class="card">English Medium Education</div>
+        <div class="card">Activity-Based Learning</div>
+        <div class="card">Individual Attention</div>
+        <div class="card">Regular Tests & Progress Tracking</div>
+        <div class="card">Strong Foundation from Pre-KG to 8th</div>
+      </div>
+    </section>
+    <section class="section">
       <h2 id="facilityTitle">Facilities</h2>
       <div class="cards">
-        <div class="card">Smart Classrooms with Activity-Based Learning</div>
-        <div class="card">Well Maintained Library for Reading Habit</div>
-        <div class="card">Safe Transport Facility Across Arni</div>
-        <div class="card">CCTV Surveillance for Student Safety</div>
-        <div class="card">Clean Drinking Water & Hygienic Toilets</div>
-        <div class="card">Karate, Yoga, Spoken English & Spoken Hindi</div>
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1588072432836-e10032774350"
+          />
+          <h3>Smart Classrooms with Activity-Based Learning</h3>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+          />
+          <h3>Well Maintained Library for Reading Habit</h3>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1577896851231-70ef18881754"
+          />
+          <h3>Safe Transport Facility Across Arni</h3>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c"
+          />
+          <h3>CCTV Surveillance for Student Safety</h3>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+          />
+          <h3>Clean Drinking Water & Hygienic Toilets</h3>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0"
+          />
+          <h3>Karate, Yoga, Spoken English & Spoken Hindi</h3>
+        </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Our Students & Activities</h2>
+      <h2>School Activities & Events</h2>
+      <p>Celebrating learning, culture and student achievements</p>
       <div class="slide">
         <img
           src="https://images.unsplash.com/photo-1588072432836-e10032774350"
@@ -232,25 +329,47 @@
       </div>
     </section>
 
-    <section class="section" id="admission">
-      <h2>Apply for Admission</h2>
-      <p style="font-size: 14px; color: #555">
-        Limited seats available. Contact us today to secure your child’s future.
+    <section class="section">
+      <h2>Admissions Open 2026–27</h2>
+
+      <p style="color: red; font-weight: bold">
+        Limited seats available. Enroll now!
       </p>
-      <form>
-        <input type="text" placeholder="Student Name" required /><br />
-        <input type="text" placeholder="Class" required /><br />
-        <input type="tel" placeholder="Phone Number" required /><br />
-        <textarea placeholder="Message"></textarea><br />
-        <button class="submit">Submit</button>
-      </form>
+
+      <p>
+        Classes: Pre-KG to 8th Standard <br />
+        Medium: English <br />
+        Curriculum: Matriculation
+      </p>
+
+      <p>📞 Call: 8015748739</p>
     </section>
 
     <section class="section">
       <h2>Visit Our School</h2>
+      <p><strong>Visit us today for admission enquiry</strong></p>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62283.46159251705!2d79.283749!3d12.666594!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad29213ee96809%3A0x6350a2cb68f2bd1c!2sBharathi%20Vidyalaya%20Nursery%20%26%20Primary%20School!5e0!3m2!1sen!2sus!4v1775783205593!5m2!1sen!2sus&output=embed"
       ></iframe>
+    </section>
+    <section class="section">
+      <h2>What Parents Say</h2>
+
+      <div class="cards">
+        <div class="card">"My child improved in studies and discipline."</div>
+        <div class="card">"Teachers give individual attention."</div>
+        <div class="card">"Safe and caring environment."</div>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Why Choose Us</h2>
+
+      <div class="cards">
+        <div class="card">Discipline-Based Education</div>
+        <div class="card">Spoken English Focus</div>
+        <div class="card">Individual Student Attention</div>
+        <div class="card">Safe & Caring Environment</div>
+      </div>
     </section>
 
     <section id="contact" class="section">
