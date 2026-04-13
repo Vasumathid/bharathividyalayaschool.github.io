@@ -12,7 +12,10 @@
       name="keywords"
       content="school in arni, best school in arni, english medium school arni, bharathi vidyalaya school"
     />
-    <meta name="author" content="Bharathi Vidyalaya" />
+    <meta
+      name="author"
+      content="Bharathi Vidyalaya Nursery and Primary School"
+    />
 
     <meta property="og:title" content="Bharathi Vidyalaya School Arni" />
     <meta
@@ -37,7 +40,14 @@
         font-family: "Poppins", sans-serif;
         background: #f5f7fb;
       }
-
+      input,
+      textarea {
+        width: 90%;
+        padding: 10px;
+        margin: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
       .container {
         max-width: 1100px;
         margin: auto;
@@ -55,7 +65,21 @@
         z-index: 1000;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
       }
-
+      nav button {
+        border: none;
+        padding: 6px 10px;
+        margin-left: 5px;
+        background: #004080;
+        color: white;
+        border-radius: 5px;
+      }
+      .submit {
+        background: #004080;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+      }
       nav h2 {
         font-size: 18px;
         color: #004080;
@@ -280,6 +304,7 @@
     </script>
     <nav>
       <h2>Bharathi Vidyalaya</h2>
+
       <div class="menu-toggle" onclick="toggleMenu()">☰</div>
       <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
@@ -287,6 +312,8 @@
         <a href="#facilities">Facilities</a>
         <a href="#contact">Contact</a>
         <a href="https://wa.me/918015748739" style="color: green">WhatsApp</a>
+      </div>
+      <div>
         <button onclick="setLang('en')">English</button>
         <button onclick="setLang('ta')">தமிழ்</button>
       </div>
@@ -468,10 +495,18 @@
     </section>
     <!-- ENQUIRY -->
 
-    <section class="section">
-      <h2>Admission Enquiry</h2>
-      <p class="cta">Click below to enquire instantly</p>
-      <a href="https://wa.me/918015748739" class="btn">Enquire on WhatsApp</a>
+    <section class="section" id="admission">
+      <h2>Apply for Admission</h2>
+      <p style="font-size: 14px; color: #555">
+        Limited seats available. Contact us today to secure your child’s future.
+      </p>
+      <form>
+        <input type="text" placeholder="Student Name" required /><br />
+        <input type="text" placeholder="Class" required /><br />
+        <input type="tel" placeholder="Phone Number" required /><br />
+        <textarea placeholder="Message"></textarea><br />
+        <button class="submit">Submit</button>
+      </form>
     </section>
 
     <!-- MAP -->
@@ -479,7 +514,7 @@
     <section class="section">
       <h2>Visit Our School</h2>
       <iframe
-        src="https://www.google.com/maps?q=bharathi+vidyalaya+arni&output=embed"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62283.46159251705!2d79.283749!3d12.666594!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad29213ee96809%3A0x6350a2cb68f2bd1c!2sBharathi%20Vidyalaya%20Nursery%20%26%20Primary%20School!5e0!3m2!1sen!2sus!4v1775783205593!5m2!1sen!2sus&output=embed"
       ></iframe>
     </section>
 
@@ -492,7 +527,7 @@
     </section>
 
     <footer>
-      <p>© 2026 Bharathi Vidyalaya School</p>
+      <p>© 2026 Bharathi Vidyalaya Nursery and Primary School</p>
     </footer>
 
     <a class="whatsapp" href="https://wa.me/918015748739">💬</a>
