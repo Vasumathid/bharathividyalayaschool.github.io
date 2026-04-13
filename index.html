@@ -282,6 +282,50 @@
         padding: 20px;
         text-align: center;
       }
+      .top-notice {
+        display: flex;
+        align-items: center;
+        background: palegreen;
+        color: white;
+        height: 40px;
+        overflow: hidden;
+      }
+
+      /* LABEL */
+      .notice-label {
+        background: #ff9800;
+        padding: 0 15px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+
+      /* SCROLL AREA */
+      .notice-scroll {
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* TEXT */
+      .scroll-text {
+        position: relative;
+        white-space: nowrap;
+        left: 100%;
+        animation: scrollLeft 40s linear infinite;
+        font-size: 14px;
+        color: white;
+      }
+
+      /* ANIMATION */
+      @keyframes scrollLeft {
+        0% {
+          left: 100%;
+        }
+        100% {
+          left: -100%;
+        }
+      }
     </style>
   </head>
 
@@ -339,37 +383,73 @@
         <button onclick="setLang('ta')">தமிழ்</button>
       </div>
     </nav>
+    <div class="top-notice">
+      <div
+        class="notice-label"
+        data-en="Latest Updates"
+        data-ta="சமீபத்திய அறிவிப்புகள்"
+      >
+        Latest Updates
+      </div>
 
+      <div class="notice-scroll">
+        <div class="scroll-text">
+          <a
+            href="#admission"
+            data-en="🎉 Admissions Open for 2026–27"
+            data-ta="🎉 2026–27 ஆம் ஆண்டிற்கான சேர்க்கை நடைபெற்று வருகிறது."
+          >
+            🎉 Admissions Open for 2026–27
+          </a>
+        </div>
+      </div>
+    </div>
     <!-- HERO -->
 
     <section class="hero">
       <h1
         data-en="Bharathi Vidyalaya Nursery and Primary School"
-        data-ta="பாரதி வித்யாலயா நர்சரி மற்றும் தொடக்கப்பள்ளி"
+        data-ta="பாரதி வித்யாலயா நர்சரி மற்றும் ஆரம்பப்பள்ளி"
       >
         Bharathi Vidyalaya Nursery and Primary School
       </h1>
 
       <p
-        id="tagline"
-        data-en="Achieve what you aspire!"
+        style="color: #f4b400; font-weight: 600"
+        data-en="Achieve What You Aspire"
         data-ta="எண்ணிய முடிதல் வேண்டும்"
       >
-        Achieve what you aspire!
-      </p>
-      <p
-        data-en="Admissions Open 2026–27"
-        data-ta="2026–27 சேர்க்கை தொடங்கப்பட்டுள்ளது"
-      >
-        <strong>Admissions Open 2026–27</strong>
+        Achieve What You Aspire
       </p>
 
       <p
-        data-en="Limited Seats Available – Enroll Today"
-        data-ta="குறைந்த இருக்கைகள் மட்டுமே – இன்று சேருங்கள்"
-        style="font-weight: bold"
+        style="
+          background: #d32f2f;
+          color: white;
+          padding: 8px 12px;
+          display: inline-block;
+          font-weight: bold;
+          border-radius: 4px;
+        "
+        data-en="Admissions Open for 2026–27"
+        data-ta="2026–27 ஆம் ஆண்டிற்கான சேர்க்கை நடைபெற்று வருகிறது."
       >
-        Limited Seats Available – Enroll Today
+        Admissions Open for 2026–27
+      </p>
+
+      <p
+        data-en="English Medium School in Arni with focus on discipline, spoken English and individual attention."
+        data-ta="ஆரணியில் உள்ள ஆங்கில माध्यम பள்ளி – ஒழுக்கம், ஆங்கில பேச்சுத் திறன் மற்றும் தனிப்பட்ட கவனத்துடன்."
+      >
+        English Medium School in Arni with focus on discipline, spoken English
+        and individual attention.
+      </p>
+
+      <p
+        data-en="From Pre-KG to 8th Standard | Since 1988"
+        data-ta="Pre-KG முதல் 8ஆம் வகுப்பு வரை | 1988 முதல்"
+      >
+        From Pre-KG to 8th Standard | Since 1988
       </p>
 
       <a
