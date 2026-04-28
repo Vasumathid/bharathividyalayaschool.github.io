@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Best school in Arni with discipline, spoken English and individual attention. Admissions open 2026-27."
+      content="Bharathi Vidyalaya Nursery and Primary School in Arni – one of the best English medium schools offering quality education since 1988. Admissions open for 2026–27. Enroll now!"
     />
+
     <meta
       name="keywords"
-      content="school in arni, best school in arni, english medium school arni, bharathi vidyalaya school"
+      content="best school in arni, english medium school arni, bharathi vidyalaya school arni, nursery school in arni, primary school in arni, admissions open arni school"
     />
     <meta
       name="author"
@@ -190,7 +191,7 @@
       }
 
       .section {
-        padding: 70px 20px;
+        padding: 40px 20px;
         text-align: center;
       }
       .section h2 {
@@ -213,7 +214,7 @@
       }
       .card img {
         width: 100%;
-        height: 100%;
+        height: 220px;
         object-fit: cover;
         transition: 0.4s;
       }
@@ -226,20 +227,107 @@
       .card-content {
         position: absolute;
         bottom: 0;
-        padding: 15px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
         color: white;
-        z-index: 2;
+        padding: 10px;
+        transition: all 0.3s ease;
+      }
+      .card-content p {
+        opacity: 0;
+        max-height: 0;
+        transition: all 0.3s ease;
+      }
+      /* Show on hover */
+      .card:hover .card-content p {
+        opacity: 1;
+        max-height: 100px;
+      }
+
+      /* Slight lift effect */
+      .card:hover {
+        transform: scale(1.03);
       }
       .card:hover img {
         transform: scale(1.1);
       }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 25px;
+      }
 
+      /* Different sizes (premium feel) */
+      .gallery-item.large {
+        grid-row: span 2;
+      }
+
+      .gallery-item.wide {
+        grid-column: span 2;
+      }
+
+      /* container */
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      /* image */
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+
+        transition: transform 0.4s ease;
+      }
+
+      /* overlay text */
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 10px;
+
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+        color: white;
+        font-size: 14px;
+
+        opacity: 0;
+        transition: 0.3s;
+      }
+
+      /* hover */
+      .gallery-item:hover img {
+        transform: scale(1.08);
+      }
+
+      .gallery-item:hover .overlay {
+        opacity: 1;
+      }
+      @media (max-width: 768px) {
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .gallery-item.large,
+        .gallery-item.wide {
+          grid-column: span 1;
+          grid-row: span 1;
+        }
+      }
       /* TEXT CARDS */
       .text-cards .card {
-        background: white;
-        height: auto;
-        padding: 20px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        font-style: italic;
+        position: relative;
+      }
+
+      .text-cards .card::before {
+        content: "“";
+        font-size: 30px;
+        color: #d32f2f;
       }
 
       /* PRINCIPAL */
@@ -316,8 +404,53 @@
         font-size: 14px;
         color: white;
       }
+      .premium-list {
+        list-style: none;
+        padding: 0;
+        margin: 25px auto;
+        max-width: 1000px; /* wider */
+        width: 100%;
+      }
 
-      /* ANIMATION */
+      .premium-list li {
+        position: relative;
+        padding: 14px 16px 14px 45px;
+        margin-bottom: 12px;
+
+        background: #ffffff;
+        border-radius: 8px;
+
+        /* soft premium shadow */
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+
+        font-weight: 500;
+        font-size: 15px;
+
+        transition: all 0.2s ease;
+      }
+
+      /* check icon */
+      .premium-list li::before {
+        content: "✔";
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        color: #2e7d32;
+        font-weight: bold;
+      }
+
+      /* subtle hover */
+      .premium-list li:hover {
+        transform: translateX(4px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+      }
+      @media (max-width: 900px) {
+        .premium-list {
+          max-width: 90%;
+        }
+      }
       @keyframes scrollLeft {
         0% {
           left: 100%;
@@ -326,26 +459,72 @@
           left: -100%;
         }
       }
+      .slide {
+        min-width: 100%;
+      }
+      .slider {
+        position: relative;
+        overflow: hidden;
+        max-width: 900px;
+        margin: 25px auto;
+        border-radius: 10px;
+      }
+
+      .slides {
+        display: flex;
+        transition: transform 1s ease;
+      }
+
+      .slides img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+
+      /* arrows */
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+
+      /* dots */
+      .dots {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .dots span {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin: 5px;
+        background: #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .dots .active {
+        background: #0d47a1;
+      }
     </style>
   </head>
 
   <body>
-    <script>
-      function setLang(lang) {
-        document.querySelectorAll("[data-en]").forEach((el) => {
-          el.innerText = el.getAttribute("data-" + lang);
-        });
-      }
-      function toggleMenu() {
-        document.getElementById("navLinks").classList.toggle("show");
-      }
-      // CLOSE MENU ON CLICK
-      document.querySelectorAll("#navLinks a").forEach((link) => {
-        link.addEventListener("click", () => {
-          document.getElementById("navLinks").classList.remove("show");
-        });
-      });
-    </script>
     <nav>
       <h2 data-en="Bharathi Vidyalaya" data-ta="பாரதி வித்யாலயா">
         Bharathi Vidyalaya
@@ -416,7 +595,7 @@
 
       <p
         style="color: #f4b400; font-weight: 600"
-        data-en="Achieve What You Aspire"
+        data-en="Achieve What You Aim for"
         data-ta="எண்ணிய முடிதல் வேண்டும்"
       >
         Achieve What You Aspire
@@ -439,17 +618,17 @@
 
       <p
         data-en="English Medium School in Arni with focus on discipline, spoken English and individual attention."
-        data-ta="ஆரணியில் உள்ள ஆங்கில माध्यम பள்ளி – ஒழுக்கம், ஆங்கில பேச்சுத் திறன் மற்றும் தனிப்பட்ட கவனத்துடன்."
+        data-ta="ஆரணியில், ஒழுக்கம், ஆங்கிலப் பேச்சுத் திறன் மற்றும் தனிப்பட்ட கவனிப்பு ஆகியவற்றில் கவனம் செலுத்தும் ஆங்கில வழிப் பள்ளி."
       >
         English Medium School in Arni with focus on discipline, spoken English
         and individual attention.
       </p>
 
       <p
-        data-en="From Pre-KG to 8th Standard | Since 1988"
-        data-ta="Pre-KG முதல் 8ஆம் வகுப்பு வரை | 1988 முதல்"
+        data-en="From Pre-KG to 7th Standard | Since 1988"
+        data-ta="Pre-KG முதல் 7ஆம் வகுப்பு வரை | 1988 முதல்"
       >
-        From Pre-KG to 8th Standard | Since 1988
+        From Pre-KG to 7th Standard | Since 1988
       </p>
 
       <a
@@ -478,17 +657,69 @@
         <h2 data-en="About Us" data-ta="எங்களை பற்றி">About Us</h2>
 
         <p
-          data-en="Bharathi Vidyalaya Nursery and Primary School, located in Arni, offers quality English medium education from Pre-KG to 8th standard under the Matriculation syllabus. With a strong foundation built since 1988, we focus on discipline, individual attention and value-based learning. Our goal is not only academic excellence but also to nurture confidence, character and responsibility in every child. In a safe, caring and supportive environment, students are encouraged to explore, learn and grow into confident individuals."
-          data-ta="ஆரணியில் அமைந்துள்ள பாரதி வித்யாலயா நர்சரி மற்றும் ஆரம்பப்பள்ளி, Pre-KG முதல் 8ஆம் வகுப்பு வரை மேட்ரிகுலேஷன் பாடத்திட்டத்தின் கீழ் தரமான ஆங்கில माध्यमக் கல்வியை வழங்குகிறது. 1988 முதல் வலுவான அடித்தளத்துடன் செயல்பட்டு வரும் எங்கள் பள்ளி, ஒழுக்கம், தனிப்பட்ட கவனம் மற்றும் நல்ல பண்புகளைக் கொண்ட கல்வியை முக்கியமாகக் கொண்டுள்ளது. எங்கள் நோக்கம் கல்வி சிறப்பை மட்டும் அல்லாது, ஒவ்வொரு மாணவரிலும் நம்பிக்கை, நல்ல குணம் மற்றும் பொறுப்புணர்வை வளர்ப்பதாகும். பாதுகாப்பான மற்றும் அன்பான சூழலில், மாணவர்கள் ஆராய்ந்து கற்றுக்கொண்டு நம்பிக்கையுடன் வளர ஊக்கப்படுத்தப்படுகின்றனர்."
+          data-en="Bharathi Vidyalaya Nursery and Primary School, Arni, stands as a distinguished institution with a legacy of excellence since 1988, founded under the leadership of Thiru Gururajarao. Over the decades, the school has earned the trust of the community through its consistent commitment to discipline, strong academic standards, and value-based education."
+          data-ta="ஆரணியில் அமைந்துள்ள பாரதி வித்யாலயா நர்சரி மற்றும் தொடக்கப்பள்ளி, திரு. குருராஜாராவ் அவர்களின் தலைமையில் நிறுவப்பட்டு, 1988-ஆம் ஆண்டு முதல் சிறப்பின் அடையாளமாகத் திகழும் ஒரு புகழ்பெற்ற கல்வி நிறுவனமாகும். கடந்த பல தசாப்தங்களாக, ஒழுக்கம், உயர்தரக் கல்வித் தரநிலைகள் மற்றும் விழுமியங்களை அடிப்படையாகக் கொண்ட கல்வி ஆகியவற்றில் தான் கொண்டுள்ள நிலையான அர்ப்பணிப்பின் மூலம், இப்பள்ளி சமூகத்தின் நம்பிக்கையை வென்றுள்ளது."
         >
-          Bharathi Vidyalaya Nursery and Primary School, located in Arni, offers
-          quality English medium education from Pre-KG to 8th standard under the
-          Matriculation syllabus. With a strong foundation built since 1988, we
-          focus on discipline, individual attention and value-based learning.
-          Our goal is not only academic excellence but also to nurture
-          confidence, character and responsibility in every child. In a safe,
-          caring and supportive environment, students are encouraged to explore,
-          learn and grow into confident individuals.
+          Bharathi Vidyalaya Nursery and Primary School, Arni, stands as a
+          distinguished institution with a legacy of excellence since 1988,
+          founded under the leadership of Thiru Gururajarao. Over the decades,
+          the school has earned the trust of the community through its
+          consistent commitment to discipline, strong academic standards, and
+          value-based education.
+        </p>
+
+        <p
+          data-en="In 2021, Bharathi Vidyalaya entered a new phase of growth under the management of GD Institutions. The organization has established a strong reputation through GD Vidyashram, Arcot, and GD IAS Academy, known for delivering consistent academic results and excellence in competitive exam coaching, including police coaching."
+          data-ta="2021-ஆம் ஆண்டில், GD நிறுவனங்களின் நிர்வாகத்தின் கீழ், பாரதி வித்யாலயா தனது வளர்ச்சியின் ஒரு புதிய கட்டத்தில் அடியெடுத்து வைத்தது. சீரான கல்விசார் முடிவுகளையும், காவல்துறைத் தேர்வுப் பயிற்சி உள்ளிட்ட போட்டித் தேர்வுப் பயிற்சிகளில் சிறப்பையும் வழங்குவதில் பெயர் பெற்ற GD வித்யாஸ்ரம் (ஆற்காடு) மற்றும் GD IAS அகாடமி ஆகியவற்றின் வாயிலாக, இந்நிறுவனம் தனக்கென ஒரு வலுவான நற்பெயரை நிலைநாட்டியுள்ளது."
+        >
+          In 2021, Bharathi Vidyalaya entered a new phase of growth under the
+          management of GD Institutions. The organization has established a
+          strong reputation through GD Vidyashram, Arcot, and GD IAS Academy,
+          known for delivering consistent academic results and excellence in
+          competitive exam coaching, including police coaching.
+        </p>
+
+        <p
+          data-en="This strong foundation and proven legacy have been extended to Bharathi Vidyalaya, with a clear focus on delivering affordable, high-quality education. The school continues to maintain high academic standards while ensuring accessibility for students from all sections of society."
+          data-ta="இந்த வலுவான அடித்தளமும் நிரூபிக்கப்பட்ட மரபும், மலிவு விலையில் உயர்தரக் கல்வியை வழங்குவதில் தெளிவான கவனம் செலுத்தும் வகையில், 'பாரதி வித்யாலயா'விற்கும் விரிவுபடுத்தப்பட்டுள்ளன. இப்பள்ளி தொடர்ந்து உயர்ந்த கல்வித் தரங்களைப் பேணி வருவதுடன், சமூகத்தின் அனைத்துத் தரப்பு மாணவர்களுக்கும் கல்வி எளிதில் கிடைக்கப்பெறுவதை உறுதிசெய்து வருகிறது."
+        >
+          This strong foundation and proven legacy have been extended to
+          Bharathi Vidyalaya, with a clear focus on delivering affordable,
+          high-quality education. The school continues to maintain high academic
+          standards while ensuring accessibility for students from all sections
+          of society.
+        </p>
+
+        <p
+          data-en="Under the guidance of Tmt. Gandhimathi Easwaran, M.A., M.Ed., the school upholds its mission of providing impactful and inclusive education. With a strong commitment to nurturing every child, the institution focuses on discipline, confidence, and overall development."
+          data-ta="திருமதி. காந்திமதி ஈஸ்வரன், M.A., M.Ed. அவர்களின் வழிகாட்டுதலின் கீழ், இப்பள்ளி பயனுள்ள மற்றும் அனைவரையும் உள்ளடக்கிய கல்வியை வழங்கு எனும் தனது நோக்கத்தை உறுதியுடன் முன்னெடுத்துச் செல்கிறது. ஒவ்வொரு குழந்தையையும் வளர்த்தெடுப்பதில் ஆழ்ந்த அர்ப்பணிப்புடன் திகழும் இவ்வமைப்பு, ஒழுக்கம், தன்னம்பிக்கை மற்றும் ஒட்டுமொத்த வளர்ச்சி ஆகியவற்றின் மீது சிறப்புக் கவனம் செலுத்துகிறது."
+        >
+          Under the guidance of Tmt. Gandhimathi Easwaran, M.A., M.Ed., the
+          school upholds its mission of providing impactful and inclusive
+          education. With a strong commitment to nurturing every child, the
+          institution focuses on discipline, confidence, and overall
+          development.
+        </p>
+
+        <p
+          data-en="The school is supported by a team of dedicated women educators who create a safe, caring, and structured learning environment. With a strong focus on individual attention, every student is guided to achieve academic progress along with communication skills, character, and self-confidence."
+          data-ta="பாதுகாப்பான, அக்கறையான மற்றும் கட்டமைக்கப்பட்ட கற்றல் சூழலை உருவாக்கும் அர்ப்பணிப்புள்ள பெண் கல்வியாளர்கள் குழுவால் இந்தப் பள்ளி ஆதரிக்கப்படுகிறது. ஒவ்வொரு மாணவர் மீதும் தனிப்பட்ட கவனம் செலுத்துவதை முதன்மையாகக் கொண்டு, கல்விசார் முன்னேற்றத்துடன் சேர்த்துத் தொடர்புத் திறன்கள், நற்பண்புகள் மற்றும் தன்னம்பிக்கை ஆகியவற்றையும் வளர்த்துக்கொள்ளும் வகையில் ஒவ்வொரு மாணவரும் இங்கு வழிநடத்தப்படுகின்றனர்."
+        >
+          The school is supported by a team of dedicated women educators who
+          create a safe, caring, and structured learning environment. With a
+          strong focus on individual attention, every student is guided to
+          achieve academic progress along with communication skills, character,
+          and self-confidence.
+        </p>
+
+        <p
+          data-en="Bharathi Vidyalaya continues to be a trusted and respected name among schools in Arni, known for its consistent standards, student-focused approach, and commitment to shaping responsible individuals prepared for the future."
+          data-ta="ஆரணியில் உள்ள பள்ளிகளுள், தனது சீரான தரநிலைகள், மாணவர் மைய அணுகுமுறை மற்றும் எதிர்காலத்திற்குத் தயாரான பொறுப்புள்ள தனிநபர்களை உருவாக்கும் அர்ப்பணிப்பு ஆகியவற்றிற்காக அறியப்படும் பாரதி வித்யாலயா, தொடர்ந்து ஒரு நம்பிக்கைக்குரிய மற்றும் மதிக்கப்படும் பெயராகத் திகழ்கிறது."
+        >
+          Bharathi Vidyalaya continues to be a trusted and respected name among
+          schools in Arni, known for its consistent standards, student-focused
+          approach, and commitment to shaping responsible individuals prepared
+          for the future.
         </p>
       </div>
     </section>
@@ -496,60 +727,150 @@
     <!-- PRINCIPAL -->
 
     <section class="section principal">
-      <h2 data-en="Principal’s Message" data-ta="தலைமை ஆசிரியர் செய்தி">
+      <h2
+        data-en="Principal’s Message"
+        data-ta="பெற்றோருக்குத் தலைமையாசிரியரின் செய்தி"
+      >
         Principal’s Message
       </h2>
 
       <img src="./images/correspondent.jpeg" />
 
-      <p
-        data-en="We nurture every child with discipline, values and confidence to become responsible citizens and future leaders."
-        data-ta="ஒவ்வொரு குழந்தையையும் ஒழுக்கம், நல்ல பண்புகள் மற்றும் நம்பிக்கையுடன் வளர்த்து, பொறுப்பான குடிமக்களாகவும் எதிர்கால தலைவர்களாகவும் உருவாக்குகிறோம்."
+      <blockquote
+        data-en="“At Bharathi Vidyalaya, we believe that every child is unique and has the potential to achieve great success when guided with the right values, discipline and encouragement. Our mission is to provide not only quality education but also to nurture confidence, character and responsibility in every student. With the support of our dedicated women educators, we ensure a safe, caring and supportive environment where every child receives personal attention and guidance. We are committed to helping our students grow into confident individuals who are well prepared to face the future.”"
+        data-ta="பாரதி வித்யாலயாவில், ஒவ்வொரு குழந்தையும் தனித்துவமானது என்றும், சரியான விழுமியங்கள், ஒழுக்கம் மற்றும் ஊக்கத்துடன் வழிநடத்தப்படும்போது, ​​அவர்கள் பெரும் வெற்றிகளை எட்டும் ஆற்றலைப் பெற்றிருக்கிறார்கள் என்றும் நாங்கள் உறுதியாக நம்புகிறோம். தரமான கல்வியை வழங்குவது மட்டுமல்லாமல், ஒவ்வொரு மாணவரிடமும் தன்னம்பிக்கை, நற்பண்பு மற்றும் பொறுப்புணர்வை வளர்ப்பதே எங்கள் நோக்கமாகும். அர்ப்பணிப்புமிக்க எங்கள் பெண் ஆசிரியர்களின் துணையோடு, ஒவ்வொரு குழந்தைக்கும் தனிப்பட்ட கவனிப்பும் வழிகாட்டுதலும் கிடைக்கும் வகையில், பாதுகாப்பான, கனிவான மற்றும் ஆதரவான ஓர் சூழலை நாங்கள் உறுதிசெய்கிறோம். எதிர்காலத்தை எதிர்கொள்ளும் வகையில் நன்கு தயாரான, தன்னம்பிக்கை மிக்க தனிநபர்களாக எங்கள் மாணவர்கள் வளர்வதற்கு உதவுவதில் நாங்கள் உறுதியுடன் உள்ளோம்."
       >
-        We nurture every child with discipline, values and confidence to become
-        responsible citizens and future leaders.
+        “At Bharathi Vidyalaya, we believe that every child is unique and has
+        the potential to achieve great success when guided with the right
+        values, discipline and encouragement. Our mission is to provide not only
+        quality education but also to nurture confidence, character and
+        responsibility in every student. With the support of our dedicated women
+        educators, we ensure a safe, caring and supportive environment where
+        every child receives personal attention and guidance. We are committed
+        to helping our students grow into confident individuals who are well
+        prepared to face the future.”
+      </blockquote>
+
+      <p
+        style="margin-top: 10px; font-weight: bold"
+        data-en="– Tmt. Gandhimathi Easwaran, M.A., M.Ed."
+        data-ta="– திருமதி காந்திமதி ஈஸ்வரன், M.A., M.Ed."
+      >
+        – Tmt. Gandhimathi Easwaran, M.A., M.Ed.
       </p>
     </section>
 
     <!-- ACADEMICS -->
 
     <section id="academics" class="section">
-      <h2 data-en="Academics" data-ta="கல்வி">Academics</h2>
+      <h2 data-en="Academics" data-ta="கல்விசார் செயல்பாடுகள்">Academics</h2>
 
       <div class="cards">
+        <!-- CARD 1 -->
         <div class="card">
           <img
             src="https://images.unsplash.com/photo-1588072432836-e10032774350"
           />
           <div class="card-content">
-            <h3 data-en="Activity-Based Learning" data-ta="செயல்முறை கற்றல்">
-              Activity-Based Learning
+            <h3
+              data-en="Matriculation Curriculum"
+              data-ta="மெட்ரிகுலேஷன் பாடத்திட்டம்"
+            >
+              Matriculation Curriculum
             </h3>
+            <p>
+              Strong academic foundation from Pre-KG to 7th with English medium
+              instruction.
+            </p>
           </div>
         </div>
 
+        <!-- CARD 2 -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+          />
+          <div class="card-content">
+            <h3
+              data-en="Spoken English Training"
+              data-ta="ஆங்கில பேச்சு பயிற்சி"
+            >
+              Spoken English Training
+            </h3>
+            <p>
+              Dedicated classes where students speak only in English to build
+              confidence.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+          />
+          <div class="card-content">
+            <h3
+              data-en="Daily Tests & Homework"
+              data-ta="தினசரி தேர்வுகள் மற்றும் வீட்டுப்பாடம்"
+            >
+              Daily Tests & Homework
+            </h3>
+            <p>
+              Regular tests and homework ensure continuous learning and
+              improvement.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
         <div class="card">
           <img
             src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b"
           />
           <div class="card-content">
-            <h3 data-en="Individual Attention" data-ta="தனிப்பட்ட கவனம்">
-              Individual Attention
+            <h3
+              data-en="Smart & Activity Learning"
+              data-ta="அறிவுசார் மற்றும் செயல்வழி கற்றல்"
+            >
+              Smart & Activity Learning
             </h3>
+            <p>
+              Activity-based teaching with smart classes and practical learning
+              methods.
+            </p>
           </div>
         </div>
 
+        <!-- CARD 5 -->
         <div class="card">
           <img
-            src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+            src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
           />
           <div class="card-content">
             <h3
-              data-en="Regular Assessments"
-              data-ta="தொடர்ச்சியான மதிப்பீடுகள்"
+              data-en="Reading & Language Skills"
+              data-ta="வாசிப்பு மற்றும் மொழித் திறன்கள்"
             >
-              Regular Assessments
+              Reading & Language Skills
             </h3>
+            <p>
+              Focus on reading, Tamil language and communication skills
+              development.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+          />
+          <div class="card-content">
+            <h3 data-en="Inclusive Learning" data-ta="அனைவருக்கும் சமமான கல்வி">
+              Inclusive Learning
+            </h3>
+            <p>All students learn together with equal attention and support.</p>
           </div>
         </div>
       </div>
@@ -561,43 +882,155 @@
       <h2 data-en="Facilities" data-ta="வசதிகள்">Facilities</h2>
 
       <div class="cards">
+        <!-- CLASSROOM -->
         <div class="card">
           <img
             src="https://images.unsplash.com/photo-1588072432836-e10032774350"
           />
           <div class="card-content">
-            <h3 data-en="Smart Classrooms" data-ta="ஸ்மார்ட் வகுப்பறைகள்">
-              Smart Classrooms
+            <h3
+              data-en="Well-Ventilated Classrooms"
+              data-ta="காற்றோட்டமான வகுப்பறைகள்"
+            >
+              Well-Ventilated Classrooms
             </h3>
+            <p
+              data-en="Spacious and well-ventilated classrooms with a strong focus on blackboard teaching to improve concentration and reduce screen exposure."
+              data-ta="பரந்த மற்றும் காற்றோட்டமான வகுப்பறைகள். மாணவர்களின் கவனத்தை அதிகரிக்கவும் திரை பயன்பாட்டை குறைக்கவும் கரும்பலகை கற்பித்தல் முறைக்கு முக்கியத்துவம் அளிக்கப்படுகிறது."
+            >
+              Spacious and well-ventilated classrooms with a strong focus on
+              blackboard teaching to improve concentration and reduce screen
+              exposure.
+            </p>
           </div>
         </div>
 
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da"
-          />
-          <div class="card-content">
-            <h3 data-en="Library" data-ta="நூலகம்">Library</h3>
-          </div>
-        </div>
-
+        <!-- CCTV -->
         <div class="card">
           <img
             src="https://images.unsplash.com/photo-1570129477492-45c003edd2be"
           />
           <div class="card-content">
-            <h3 data-en="Transport" data-ta="போக்குவரத்து">Transport</h3>
+            <h3
+              data-en="Full Campus CCTV Surveillance"
+              data-ta="முழு வளாக CCTV கண்காணிப்பு"
+            >
+              Full Campus CCTV Surveillance
+            </h3>
+            <p
+              data-en="Entire school campus is monitored with CCTV cameras to ensure safety and security of all students at all times."
+              data-ta="மாணவர்களின் பாதுகாப்பை உறுதி செய்ய முழு பள்ளி வளாகமும் CCTV மூலம் கண்காணிக்கப்படுகிறது."
+            >
+              Entire school campus is monitored with CCTV cameras to ensure
+              safety and security of all students at all times.
+            </p>
           </div>
         </div>
 
+        <!-- TRANSPORT -->
         <div class="card">
           <img
-            src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b"
+            src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957"
           />
           <div class="card-content">
-            <h3 data-en="CCTV Security" data-ta="CCTV பாதுகாப்பு">
-              CCTV Security
+            <h3
+              data-en="School Transport Across Arni"
+              data-ta="ஆரணி முழுவதும் போக்குவரத்து வசதி"
+            >
+              School Transport Across Arni
             </h3>
+            <p
+              data-en="School van facility available covering all areas of Arni for safe and convenient student travel."
+              data-ta="ஆரணி முழுவதும் மாணவர்கள் பாதுகாப்பாக பள்ளிக்கு வரவும் செல்லவும் பள்ளி வாகன வசதி வழங்கப்படுகிறது."
+            >
+              School van facility available covering all areas of Arni for safe
+              and convenient student travel.
+            </p>
+          </div>
+        </div>
+
+        <!-- LIBRARY -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da"
+          />
+          <div class="card-content">
+            <h3
+              data-en="Library & Reading Support"
+              data-ta="நூலகம் மற்றும் வாசிப்பு"
+            >
+              Library & Reading Support
+            </h3>
+            <p
+              data-en="Well-maintained library with books to encourage reading habits and improve language skills."
+              data-ta="மாணவர்களின் வாசிப்பு பழக்கத்தையும் மொழித் திறனையும் மேம்படுத்த புத்தகங்களுடன் கூடிய நூலகம்."
+            >
+              Well-maintained library with books to encourage reading habits and
+              improve language skills.
+            </p>
+          </div>
+        </div>
+
+        <!-- WATER & CLEAN -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+          />
+          <div class="card-content">
+            <h3
+              data-en="Clean & Hygienic Campus"
+              data-ta="சுத்தமான மற்றும் சுகாதாரமான வளாகம்"
+            >
+              Clean & Hygienic Campus
+            </h3>
+            <p
+              data-en="RO drinking water, separate toilets for boys and girls, and dedicated staff ensure cleanliness and hygiene throughout the day."
+              data-ta="RO குடிநீர், ஆண்-பெண் தனி கழிப்பறைகள் மற்றும் 24/7 சுத்தம் செய்யும் பணியாளர்கள் மூலம் சுத்தமாகவும் சுகாதாரமாகவும் பராமரிக்கப்படுகிறது."
+            >
+              RO drinking water, separate toilets for boys and girls, and
+              dedicated staff ensure cleanliness and hygiene throughout the day.
+            </p>
+          </div>
+        </div>
+
+        <!-- ACTIVITIES -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1518611012118-696072aa579a"
+          />
+          <div class="card-content">
+            <h3 data-en="Co-Curricular Activities" data-ta="இணைச் செயல்பாடுகள்">
+              Co-Curricular Activities
+            </h3>
+            <p
+              data-en="Students are encouraged to participate in indoor activities, karate, dance and yoga for overall physical and mental development."
+              data-ta="கராத்தே, நடனம், யோகா மற்றும் பிற உள்ளரங்க செயல்பாடுகள் மூலம் மாணவர்களின் உடல் மற்றும் மன வளர்ச்சி மேம்படுத்தப்படுகிறது."
+            >
+              Students are encouraged to participate in indoor activities,
+              karate, dance and yoga for overall physical and mental
+              development.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+          />
+          <div class="card-content">
+            <h3
+              data-en="Dedicated Women Educators"
+              data-ta="அர்ப்பணிப்பான பெண் ஆசிரியர்கள்"
+            >
+              Dedicated Women Educators
+            </h3>
+            <p
+              data-en="Our team of dedicated women teachers ensures a caring, safe and supportive environment where every child receives personal attention and guidance."
+              data-ta="எங்கள் அர்ப்பணிப்பான பெண் ஆசிரியர்கள், ஒவ்வொரு குழந்தைக்கும் அக்கறையுடன் பாதுகாப்பான மற்றும் ஆதரவான சூழலை வழங்கி, தனிப்பட்ட கவனத்தையும் வழிகாட்டுதலையும் உறுதி செய்கிறார்கள்."
+            >
+              Our team of dedicated women teachers ensures a caring, safe and
+              supportive environment where every child receives personal
+              attention and guidance.
+            </p>
           </div>
         </div>
       </div>
@@ -606,50 +1039,56 @@
     <!-- WHY CHOOSE -->
 
     <section class="section">
-      <h2 data-en="Why Choose Us" data-ta="ஏன் எங்களை தேர்வு செய்ய வேண்டும்">
-        Why Choose Us
+      <h2
+        data-en="Why Parents Choose Us"
+        data-ta="பெற்றோர் எங்களை தேர்வு செய்யும் காரணங்கள்"
+      >
+        Why Parents Choose Us
       </h2>
 
-      <div class="cards">
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-          />
-          <div class="card-content">
-            <h3
-              data-en="Discipline & Values"
-              data-ta="ஒழுக்கமும் நல்ல பண்புகளும்"
-            >
-              Discipline & Values
-            </h3>
-          </div>
-        </div>
+      <ul class="premium-list">
+        <li
+          data-en="Discipline & Good Habits from Early Years"
+          data-ta="சிறு வயதிலிருந்து ஒழுக்கமும் நல்ல பழக்கங்களும்"
+        >
+          Discipline & Good Habits from Early Years
+        </li>
 
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
-          />
-          <div class="card-content">
-            <h3 data-en="Safe Environment" data-ta="பாதுகாப்பான சூழல்">
-              Safe Environment
-            </h3>
-          </div>
-        </div>
+        <li
+          data-en="Dedicated Spoken English Classes"
+          data-ta="தனிப்பட்ட ஆங்கில பேச்சுத் திறன் வகுப்புகள்"
+        >
+          Dedicated Spoken English Classes
+        </li>
 
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0"
-          />
-          <div class="card-content">
-            <h3
-              data-en="Spoken English Focus"
-              data-ta="ஆங்கில பேச்சுத் திறன் மேம்பாடு"
-            >
-              Spoken English Focus
-            </h3>
-          </div>
-        </div>
-      </div>
+        <li
+          data-en="Daily Tests & Homework"
+          data-ta="தினசரி தேர்வுகள் மற்றும் வீட்டுப்பாடம்"
+        >
+          Daily Tests & Homework
+        </li>
+
+        <li
+          data-en="Caring Women Teachers"
+          data-ta="அக்கறைமிக்க பெண் ஆசிரியர்கள்"
+        >
+          Caring Women Teachers
+        </li>
+
+        <li
+          data-en="Safe & Secure Campus with CCTV"
+          data-ta="CCTV பாதுகாப்புடன் பாதுகாப்பான வளாகம்"
+        >
+          Safe & Secure Campus with CCTV
+        </li>
+
+        <li
+          data-en="Affordable Quality Education"
+          data-ta="குறைந்த கட்டணத்தில் தரமான கல்வி"
+        >
+          Affordable Quality Education
+        </li>
+      </ul>
     </section>
 
     <!-- TESTIMONIALS -->
@@ -660,49 +1099,67 @@
       </h2>
 
       <div class="cards text-cards">
+        <!-- TESTIMONIAL 1 -->
         <div
           class="card"
-          data-en="My child improved a lot in studies and discipline."
-          data-ta="என் குழந்தை படிப்பிலும் ஒழுக்கத்திலும் மிகவும் முன்னேற்றம் கண்டுள்ளது."
+          data-en="My child has improved a lot in studies and discipline after joining this school. We can clearly see positive changes at home as well."
+          data-ta="இந்த பள்ளியில் சேர்ந்த பிறகு, என் குழந்தை படிப்பிலும் ஒழுக்கத்திலும் மிகவும் முன்னேற்றம் அடைந்துள்ளார். வீட்டிலும் நல்ல மாற்றங்கள் தெளிவாக காணப்படுகின்றது."
         >
-          "My child improved a lot in studies and discipline."
+          "My child has improved a lot in studies and discipline after joining
+          this school. We can clearly see positive changes at home as well."
         </div>
 
+        <!-- TESTIMONIAL 2 -->
         <div
           class="card"
-          data-en="Teachers give excellent care and attention."
-          data-ta="ஆசிரியர்கள் மிகுந்த கவனத்துடன் சிறந்த பராமரிப்பு வழங்குகின்றனர்."
+          data-en="Teachers give personal attention to every student and take great care. My child feels comfortable and happy going to school."
+          data-ta="ஆசிரியர்கள் ஒவ்வொரு மாணவருக்கும் தனிப்பட்ட கவனம் அளித்து அக்கறையுடன் கற்பிக்கின்றனர். என் குழந்தை மகிழ்ச்சியுடன் பள்ளிக்கு செல்கின்றார்."
         >
-          "Teachers give excellent care and attention."
+          "Teachers give personal attention to every student and take great
+          care. My child feels comfortable and happy going to school."
         </div>
 
+        <!-- TESTIMONIAL 3 -->
         <div
           class="card"
-          data-en="Best school environment in Arni."
-          data-ta="ஆரணியில் சிறந்த பள்ளி சூழல்."
+          data-en="We chose this school for its discipline and teaching. It is one of the best schools in Arni for overall development."
+          data-ta="ஒழுக்கம் கற்பித்தல் முறை காரணமாக இந்த பள்ளியை தேர்வு செய்தோம். மாணவர்களின் முழுமையான வளர்ச்சிக்கான சிறந்த பள்ளிகளில் ஒன்றாகும்."
         >
-          "Best school environment in Arni."
+          "We chose this school for its discipline and teaching. It is one of
+          the best schools in Arni for overall development."
+        </div>
+
+        <!-- TESTIMONIAL 4 -->
+        <div
+          class="card"
+          data-en="My child has started speaking in English confidently and shows more interest in studies than before."
+          data-ta="என் குழந்தை இப்போது தன்னம்பிக்கையுடன் ஆங்கிலத்தில் பேச ஆரம்பித்துள்ளார் மற்றும் படிப்பில் அதிக ஆர்வம் காட்டுகிறார்."
+        >
+          "My child has started speaking in English confidently and shows more
+          interest in studies than before."
         </div>
       </div>
     </section>
+    <section class="section" id="gallery">
+      <h2 data-en="Gallery" data-ta="படத்தொகுப்பு">Gallery</h2>
 
-    <!-- BEST SCHOOL -->
+      <div class="slider">
+        <div class="slides">
+          <div class="slide"><img src="images/fieldtrip.jpeg" /></div>
+          <div class="slide"><img src="images/happy-students.jpeg" /></div>
+          <div class="slide"><img src="images/happy students (2).jpeg" /></div>
+          <div class="slide"><img src="images/karate class.jpeg" /></div>
+          <div class="slide"><img src="images/karate competition.jpeg" /></div>
+        </div>
 
-    <section class="section">
-      <h2 data-en="Best School in Arni" data-ta="ஆரணியில் சிறந்த பள்ளி">
-        Best School in Arni
-      </h2>
+        <!-- arrows -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
 
-      <p
-        data-en="Bharathi Vidyalaya is one of the best English medium schools in Arni known for discipline, spoken English training and individual student care."
-        data-ta="பாரதி வித்யாலயா ஆரணியில் சிறந்த ஆங்கில माध्यम பள்ளிகளில் ஒன்றாகும். ஒழுக்கம், ஆங்கில பேச்சுத் திறன் பயிற்சி மற்றும் ஒவ்வொரு மாணவருக்கும் தனிப்பட்ட கவனிப்பு என்பவற்றிற்காக பெயர் பெற்றது."
-      >
-        Bharathi Vidyalaya is one of the best English medium schools in Arni
-        known for discipline, spoken English training and individual student
-        care.
-      </p>
+      <!-- dots -->
+      <div class="dots"></div>
     </section>
-
     <!-- ADMISSION -->
 
     <section class="section" id="admission">
@@ -713,7 +1170,7 @@
       <p
         style="font-size: 14px; color: #555"
         data-en="Limited seats available. Contact us today to secure your child’s future."
-        data-ta="குறைந்த இருக்கைகள் மட்டுமே. உங்கள் குழந்தையின் எதிர்காலத்திற்காக இன்று எங்களை தொடர்பு கொள்ளுங்கள்."
+        data-ta="குறைந்த இடங்களே உள்ளன. உங்கள் குழந்தையின் எதிர்காலத்திற்காக இன்றே எங்களை தொடர்பு கொள்ளுங்கள்."
       >
         Limited seats available. Contact us today to secure your child’s future.
       </p>
@@ -782,5 +1239,53 @@
       </p>
     </footer>
     <a class="whatsapp" href="https://wa.me/918015748739">💬</a>
+    <script>
+      function setLang(lang) {
+        document.querySelectorAll("[data-en]").forEach((el) => {
+          el.innerText = el.getAttribute("data-" + lang);
+        });
+      }
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
+      }
+      // CLOSE MENU ON CLICK
+      document.querySelectorAll("#navLinks a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("navLinks").classList.remove("show");
+        });
+      });
+      const slides = document.querySelector(".slides");
+      const slideCount = document.querySelectorAll(".slide").length;
+
+      let index = 0;
+
+      /* function */
+      function showSlide(i) {
+        index = i;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        slides.style.transition = "transform 0.5s ease";
+      }
+
+      /* next */
+      function nextSlide() {
+        index++;
+        if (index >= slideCount) index = 0;
+        showSlide(index);
+      }
+
+      /* prev */
+      function prevSlide() {
+        index--;
+        if (index < 0) index = slideCount - 1;
+        showSlide(index);
+      }
+
+      /* buttons */
+      document.querySelector(".next").addEventListener("click", nextSlide);
+      document.querySelector(".prev").addEventListener("click", prevSlide);
+
+      /* auto */
+      setInterval(nextSlide, 3000);
+    </script>
   </body>
 </html>
