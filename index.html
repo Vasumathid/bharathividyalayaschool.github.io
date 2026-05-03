@@ -544,14 +544,34 @@
       .dots .active {
         background: #0d47a1;
       }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo img {
+        height: 40px;
+        width: auto;
+      }
+
+      .logo span {
+        font-weight: 600;
+        color: #004080;
+        font-size: 16px;
+      }
     </style>
   </head>
 
   <body>
     <nav>
-      <h2 data-en="Bharathi Vidyalaya" data-ta="பாரதி வித்யாலயா">
-        Bharathi Vidyalaya
-      </h2>
+      <div class="logo">
+        <img src="images/logo.png" alt="Bharathi Vidyalaya Logo" />
+        <span data-en="Bharathi Vidyalaya" data-ta="பாரதி வித்யாலயா">
+          Bharathi Vidyalaya
+        </span>
+      </div>
 
       <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
@@ -608,6 +628,7 @@
     </div>
     <!-- HERO -->
     <section class="hero">
+      <img src="images/logo.png" style="height: 200px; margin-bottom: 10px" />
       <h1
         data-en="Bharathi Vidyalaya Nursery and Primary School, Arni"
         data-ta="பாரதி வித்யாலயா நர்சரி மற்றும் ஆரம்பப்பள்ளி, ஆரணி"
@@ -1215,6 +1236,7 @@
     </section>
 
     <footer>
+      <img src="images/logo.png" style="height: 40px; margin-bottom: 10px" />
       <p
         data-en="© 2026 Bharathi Vidyalaya Nursery and Primary School"
         data-ta="© 2026 பாரதி வித்யாலயா நர்சரி மற்றும் ஆரம்பப்பள்ளி"
