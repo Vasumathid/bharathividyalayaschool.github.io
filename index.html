@@ -45,26 +45,16 @@
       name="twitter:title"
       content="Bharathi Vidyalaya School Arni | Admissions Open 2026–27"
     />
-    <meta
-      name="twitter:description"
-      content="Best English medium school in Arni since 1988. Limited seats – apply now!"
-    />
-    <meta
-      name="twitter:image"
-      content="https://bharathividyalayaschool.com/images/.jpg"
-    />
-
-    <!-- ===== Schema.org Structured Data (Google Rich Results) ===== -->
+    <meta property="og:image" content="images/hero.jpg" />
+    <title>Bharathi Vidyalaya Nursery and Primary School</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "School",
         "name": "Bharathi Vidyalaya Nursery and Primary School",
-        "alternateName": "Bharathi Vidyalaya School Arni",
         "url": "https://bharathividyalayaschool.com",
-        "logo": "https://bharathividyalayaschool.com/images/logo.png",
-        "image": "https://bharathividyalayaschool.com/images/schooloutside.jpg",
-        "description": "Best English medium school in Arni since 1988. Offering Pre-KG to 8th Standard education with strong focus on discipline, spoken English and individual attention.",
+        "telephone": "+918015748739",
+        "email": "contact@bharathividyalayaschool.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "No.38, Chinnakadai Street, Kosapalayam",
@@ -73,91 +63,10 @@
           "postalCode": "632317",
           "addressCountry": "IN"
         },
-        "telephone": "+918015748739",
-        "email": "contact@bharathividyalayaschool.com",
-        "foundingDate": "1988",
-        "numberOfEmployees": "20",
-        "areaServed": "Arni, Tiruvannamalai District, Tamil Nadu",
-        "sameAs": ["https://wa.me/918015748739"],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "School Programs",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": { "@type": "Course", "name": "Pre-KG Program" }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Course",
-                "name": "Nursery & LKG & UKG"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Course",
-                "name": "Primary School (1st to 5th Standard)"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Course",
-                "name": "Middle School (6th to 8th Standard)"
-              }
-            }
-          ]
-        }
+        "description": "Best English medium school in Arni since 1988. Admissions open for 2026-27 for Pre-KG to 8th Standard.",
+        "foundingDate": "1988"
       }
     </script>
-
-    <!-- ===== FAQ Schema (boosts Google Answer Box) ===== -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is Bharathi Vidyalaya School in Arni accepting admissions for 2026-27?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, Bharathi Vidyalaya Nursery and Primary School in Arni has admissions open for 2026–27. Seats are limited. Call 8015748739 or WhatsApp to enquire."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What classes does Bharathi Vidyalaya Arni offer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Bharathi Vidyalaya offers classes from Pre-KG to 8th Standard (Matriculation curriculum) in English medium."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where is Bharathi Vidyalaya School located in Arni?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Bharathi Vidyalaya School is located at No.38, Chinnakadai Street, Kosapalayam, Arni, Tamil Nadu."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does Bharathi Vidyalaya have school transport in Arni?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, Bharathi Vidyalaya provides school van transport covering all areas of Arni for safe and convenient student travel."
-            }
-          }
-        ]
-      }
-    </script>
-
-    <!-- ===== Fonts ===== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
@@ -429,6 +338,14 @@
         50% {
           box-shadow: 0 0 0 8px rgba(232, 101, 10, 0);
         }
+      }
+      .hero {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("images/schooloutside.jpeg") center/cover;
+        color: white;
+        text-align: center;
+        padding: 120px 20px;
       }
       .hero h1 {
         font-family: "Playfair Display", serif;
@@ -2424,11 +2341,15 @@
               parent/guardian ID proof. Contact us to confirm the complete list.
             </div>
           </div>
-          <div class="faq-item" role="listitem">
-            <button
-              class="faq-q"
-              onclick="toggleFaq(this)"
-              aria-expanded="false"
+        </div>
+
+        <!-- WATER & CLEAN -->
+        <div class="card">
+          <img src="images/schooloutside.jpeg" />
+          <div class="card-content">
+            <h3
+              data-en="Clean & Hygienic Campus"
+              data-ta="சுத்தமான மற்றும் சுகாதாரமான வளாகம்"
             >
               How is the school fee structure?
               <span class="icon" aria-hidden="true">+</span>
@@ -2696,17 +2617,18 @@
             >
           </p>
         </div>
-        <div class="footer-credit">
-          Website by
-          <a
-            href="https://budgetwebsitedevelopersvellore.netlify.app/"
-            target="_blank"
-            rel="noopener"
-          >
-            Budget Website Developers
-          </a>
-          · Vellore ·
-          <a href="tel:9003643649">90036 43649</a>
+      </div>
+    </section>
+    <section class="section" id="gallery">
+      <h2 data-en="Gallery" data-ta="படத்தொகுப்பு">Gallery</h2>
+
+      <div class="slider">
+        <div class="slides">
+          <div class="slide"><img src="images/fieldtrip.jpeg" /></div>
+          <div class="slide"><img src="images/happy-students.jpeg" /></div>
+          <div class="slide"><img src="images/happystudents2.jpeg" /></div>
+          <div class="slide"><img src="images/karatePrize.jpeg" /></div>
+          <div class="slide"><img src="images/karatecompetition.jpeg" /></div>
         </div>
       </div>
     </footer>
