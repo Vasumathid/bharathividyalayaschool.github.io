@@ -1254,7 +1254,71 @@
         }
       }
 
+      /* ===== HAMBURGER MENU ===== */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 6px;
+      }
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--navy);
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: white;
+        z-index: 99;
+        padding: 16px 20px 24px;
+        border-bottom: 1px solid var(--gray-100);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        gap: 4px;
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      .mobile-menu a {
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--gray-700);
+        padding: 12px 16px;
+        border-radius: 10px;
+        transition: all 0.2s;
+        display: block;
+      }
+      .mobile-menu a:hover {
+        background: var(--gray-50);
+        color: var(--navy);
+      }
+      .mobile-menu-cta {
+        display: flex;
+        gap: 10px;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid var(--gray-100);
+        flex-wrap: wrap;
+      }
+      .mobile-menu-cta a {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+      }
+
       @media (max-width: 900px) {
+        /* Layout fixes */
         .about-grid,
         .admission-grid,
         .contact-grid {
@@ -1272,19 +1336,81 @@
         }
         .principal-card {
           flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 28px 20px;
         }
+        .principal-quote {
+          text-align: left;
+        }
+
+        /* Navbar — hide desktop links, show hamburger */
         .navbar {
           padding: 0 16px;
         }
         .nav-links {
           display: none;
         }
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+
+        /* Section padding */
         .section,
         .section-full {
-          padding: 60px 20px;
+          padding: 50px 20px;
+        }
+
+        /* Topbar — hide address on tablet */
+        .topbar-left span:last-child {
+          display: none;
+        }
+
+        /* News grid */
+        #newsGrid {
+          grid-template-columns: 1fr 1fr !important;
+        }
+
+        /* Admission band stack */
+        .admission-band {
+          padding: 20px;
+          gap: 16px;
         }
       }
+
       @media (max-width: 600px) {
+        /* Topbar — hide email on mobile too */
+        .topbar {
+          padding: 6px 14px;
+          font-size: 11px;
+        }
+        .topbar-left span:nth-child(2) {
+          display: none;
+        }
+
+        /* Hero */
+        .hero-content {
+          padding: 48px 20px;
+        }
+        .hero-stats {
+          gap: 16px;
+        }
+        .hero-stat-num {
+          font-size: 24px;
+        }
+        .hero-cta {
+          flex-direction: column;
+          align-items: center;
+        }
+        .hero-cta .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        /* Grids to single column */
         .academics-grid {
           grid-template-columns: 1fr;
         }
@@ -1294,17 +1420,98 @@
         .footer-grid {
           grid-template-columns: 1fr;
         }
-        .hero-content {
-          padding: 60px 20px;
+        .why-grid {
+          grid-template-columns: 1fr;
         }
-        .hero-stats {
-          gap: 20px;
+        #newsGrid {
+          grid-template-columns: 1fr !important;
         }
-        .topbar {
-          font-size: 11px;
-        }
+
+        /* Forms */
         .form-row {
           grid-template-columns: 1fr;
+        }
+        .form-card {
+          padding: 24px 18px;
+        }
+
+        /* Sections */
+        .section,
+        .section-full {
+          padding: 40px 16px;
+        }
+        section[style*="padding: 80px 40px"] {
+          padding: 40px 16px !important;
+        }
+        section[style*="padding: 60px 40px"] {
+          padding: 36px 16px !important;
+        }
+
+        /* News add panel grid */
+        #newsAddPanel div[style*="grid-template-columns: 1fr 1fr"] {
+          grid-template-columns: 1fr !important;
+        }
+
+        /* Admission band */
+        .admission-band {
+          flex-direction: column;
+          padding: 20px 16px;
+          gap: 14px;
+        }
+        .admission-band .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        /* Footer */
+        footer {
+          padding: 40px 16px 24px;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        /* Principal */
+        .principal-card {
+          padding: 20px 16px;
+          gap: 20px;
+        }
+        .principal-img {
+          width: 90px;
+          height: 90px;
+        }
+        .principal-quote {
+          font-size: 14px;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+          gap: 8px;
+        }
+
+        /* WhatsApp float — move up slightly on mobile */
+        .wa-float {
+          bottom: 20px;
+          right: 16px;
+          width: 50px;
+          height: 50px;
+          font-size: 24px;
+        }
+
+        /* About badge */
+        .about-badge-float {
+          left: 8px;
+          bottom: -8px;
+          padding: 12px 16px;
+        }
+        .about-badge-float .num {
+          font-size: 26px;
+        }
+
+        /* Topbar hide on very small */
+        .topbar-right {
+          display: none;
         }
       }
     </style>
@@ -1370,7 +1577,38 @@
         >
         <a href="#admission" class="btn btn-primary">Apply Now</a>
       </div>
+      <button
+        class="hamburger"
+        onclick="toggleMobileMenu()"
+        aria-label="Open menu"
+        id="hamburgerBtn"
+      >
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" onclick="closeMobileMenu()">About</a>
+      <a href="#academics" onclick="closeMobileMenu()">Academics</a>
+      <a href="#facilities" onclick="closeMobileMenu()">Facilities</a>
+      <a href="#testimonials" onclick="closeMobileMenu()">Parents Say</a>
+      <a href="#news" onclick="closeMobileMenu()">News &amp; Events</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+      <div class="mobile-menu-cta">
+        <a
+          href="https://wa.me/918015748739"
+          class="btn btn-secondary"
+          target="_blank"
+          rel="noopener"
+          onclick="closeMobileMenu()"
+          >💬 WhatsApp</a
+        >
+        <a href="#admission" class="btn btn-primary" onclick="closeMobileMenu()"
+          >Apply Now</a
+        >
+      </div>
+    </div>
 
     <!-- ===== HERO ===== -->
     <section class="hero" aria-labelledby="hero-heading">
@@ -3100,6 +3338,35 @@
     >
 
     <script>
+      // ===== MOBILE MENU =====
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        const btn = document.getElementById("hamburgerBtn");
+        const isOpen = menu.classList.contains("open");
+        menu.classList.toggle("open");
+        btn.setAttribute("aria-expanded", !isOpen);
+        // Animate hamburger to X
+        const spans = btn.querySelectorAll("span");
+        if (!isOpen) {
+          spans[0].style.transform = "translateY(7px) rotate(45deg)";
+          spans[1].style.opacity = "0";
+          spans[2].style.transform = "translateY(-7px) rotate(-45deg)";
+        } else {
+          spans[0].style.transform = "";
+          spans[1].style.opacity = "";
+          spans[2].style.transform = "";
+        }
+      }
+      function closeMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        const btn = document.getElementById("hamburgerBtn");
+        menu.classList.remove("open");
+        btn.querySelectorAll("span").forEach((s) => {
+          s.style.transform = "";
+          s.style.opacity = "";
+        });
+      }
+
       // ===== FAQ =====
       function toggleFaq(btn) {
         const item = btn.closest(".faq-item");
@@ -3157,10 +3424,55 @@
         });
       });
 
-      // ===== NEWS & EVENTS — ADMIN LOGIN =====
-      const NEWS_KEY = "bv_news_events";
+      // ===== NEWS & EVENTS =====
+      // ─────────────────────────────────────────────────────────────────
+      // HOW STORAGE WORKS:
+      // Events are saved in localStorage on YOUR device (the admin device).
+      // When you add an event on your phone/laptop after logging in,
+      // it saves locally AND sends to a Google Sheet via Apps Script.
+      // Visitors load from the Google Sheet so they see updates from any device.
+      //
+      // SETUP STEPS (one time):
+      // 1. Go to: https://script.google.com → New Project
+      // 2. Paste the Apps Script code from the comment below
+      // 3. Deploy → Web App → Anyone can access → Copy the URL
+      // 4. Paste that URL into APPS_SCRIPT_URL below
+      // ─────────────────────────────────────────────────────────────────
+      //
+      // APPS SCRIPT CODE TO PASTE (save as Code.gs):
+      // ─────────────────────────────────────────────
+      // const SHEET_ID = 'YOUR_GOOGLE_SHEET_ID'; // from sheet URL
+      // function doGet(e) {
+      //   const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('events');
+      //   const rows = sheet.getDataRange().getValues();
+      //   const events = rows.slice(1).map(r => ({
+      //     id: r[0], title: r[1], tag: r[2], date: r[3], desc: r[4], pin: r[5] === true
+      //   }));
+      //   return ContentService.createTextOutput(JSON.stringify(events))
+      //     .setMimeType(ContentService.MimeType.JSON);
+      // }
+      // function doPost(e) {
+      //   const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('events');
+      //   const data = JSON.parse(e.postData.contents);
+      //   if (data.action === 'add') {
+      //     sheet.appendRow([data.id, data.title, data.tag, data.date, data.desc, data.pin]);
+      //   } else if (data.action === 'delete') {
+      //     const rows = sheet.getDataRange().getValues();
+      //     for (let i = rows.length - 1; i >= 1; i--) {
+      //       if (String(rows[i][0]) === String(data.id)) { sheet.deleteRow(i + 1); break; }
+      //     }
+      //   }
+      //   return ContentService.createTextOutput('ok');
+      // }
+      // ─────────────────────────────────────────────────────────────────
+
+      // ⬇️ PASTE YOUR DEPLOYED APPS SCRIPT URL HERE (leave blank to use localStorage only)
+      const APPS_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbyW8gdlCSdHPXhhGM-OYFc2x7aEjEKQpE4CA3-tcrsKh3AIiVA8bGZQvFFHIuauhEfgHQ/exec";
+
       const NEWS_SESSION_KEY = "bv_admin_session";
-      const ADMIN_PASSWORD = "bharathi@2026"; // ⬅️ CHANGE THIS TO YOUR PASSWORD
+      const NEWS_LOCAL_KEY = "bv_news_events";
+      const ADMIN_PASSWORD = "bharathi@2026"; // ⬅️ CHANGE THIS
 
       const NEWS_TAG_STYLES = {
         event: "background:#fff3e0;color:#b85c00",
@@ -3181,19 +3493,71 @@
         return sessionStorage.getItem(NEWS_SESSION_KEY) === "yes";
       }
 
-      function newsLoad() {
+      // Load: try Google Sheet first, fallback to localStorage
+      async function newsLoad() {
+        if (APPS_SCRIPT_URL) {
+          try {
+            const res = await fetch(APPS_SCRIPT_URL);
+            const data = await res.json();
+            if (Array.isArray(data) && data.length > 0) {
+              localStorage.setItem(NEWS_LOCAL_KEY, JSON.stringify(data)); // cache locally
+              return data;
+            }
+          } catch (e) {
+            /* fall through to localStorage */
+          }
+        }
         try {
-          const d = localStorage.getItem(NEWS_KEY);
+          const d = localStorage.getItem(NEWS_LOCAL_KEY);
           return d ? JSON.parse(d) : newsDefaults();
         } catch (e) {
           return newsDefaults();
         }
       }
-      function newsSave(data) {
+
+      // Save locally + push to Google Sheet
+      async function newsSaveItem(item) {
+        // Save to localStorage cache
+        let data = [];
         try {
-          localStorage.setItem(NEWS_KEY, JSON.stringify(data));
+          data = JSON.parse(localStorage.getItem(NEWS_LOCAL_KEY) || "[]");
         } catch (e) {}
+        data.unshift(item);
+        localStorage.setItem(NEWS_LOCAL_KEY, JSON.stringify(data));
+
+        // Push to Google Sheet if URL set
+        if (APPS_SCRIPT_URL) {
+          try {
+            await fetch(APPS_SCRIPT_URL, {
+              method: "POST",
+              body: JSON.stringify({ action: "add", ...item }),
+            });
+          } catch (e) {
+            console.warn("Sheet sync failed, saved locally only");
+          }
+        }
       }
+
+      async function newsDeleteItem(id) {
+        let data = [];
+        try {
+          data = JSON.parse(localStorage.getItem(NEWS_LOCAL_KEY) || "[]");
+        } catch (e) {}
+        data = data.filter((e) => e.id !== id);
+        localStorage.setItem(NEWS_LOCAL_KEY, JSON.stringify(data));
+
+        if (APPS_SCRIPT_URL) {
+          try {
+            await fetch(APPS_SCRIPT_URL, {
+              method: "POST",
+              body: JSON.stringify({ action: "delete", id }),
+            });
+          } catch (e) {
+            console.warn("Sheet sync failed");
+          }
+        }
+      }
+
       function newsDefaults() {
         return [
           {
@@ -3206,9 +3570,15 @@
           },
         ];
       }
+
       function fmtDate(d) {
         if (!d) return "";
-        return new Date(d + "T00:00:00").toLocaleDateString("en-IN", {
+        // Remove apostrophe prefix that Google Sheets adds for text-forced dates
+        const clean = String(d).replace(/^'+/, "").trim();
+        if (!clean || clean === "undefined") return "";
+        const dt = new Date(clean + "T00:00:00");
+        if (isNaN(dt.getTime())) return clean; // fallback: show raw value if still invalid
+        return dt.toLocaleDateString("en-IN", {
           day: "numeric",
           month: "short",
           year: "numeric",
@@ -3244,24 +3614,26 @@
         renderNews();
       }
 
-      function renderNews() {
+      async function renderNews() {
         const loggedIn = isAdminLoggedIn();
-        // ✅ Only ONE newsAdminControls element — no duplicate ID error
         document.getElementById("newsAdminControls").style.display = loggedIn
           ? "flex"
           : "none";
 
-        const data = newsLoad();
+        const grid = document.getElementById("newsGrid");
+        grid.innerHTML =
+          '<p style="color:var(--gray-500);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Loading news...</p>';
+
+        const data = await newsLoad();
         const pinned = data.filter((e) => e.pin);
         const rest = data
           .filter((e) => !e.pin)
           .sort((a, b) => new Date(b.date) - new Date(a.date));
         const sorted = [...pinned, ...rest];
-        const grid = document.getElementById("newsGrid");
 
         if (!sorted.length) {
           grid.innerHTML =
-            '<p style="color:var(--gray-500);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">No news yet. Visit this page as admin to add events.</p>';
+            '<p style="color:var(--gray-500);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">No news yet.</p>';
           return;
         }
 
@@ -3293,7 +3665,7 @@
         b.textContent = open ? "✕ Close" : "+ Add Event";
       }
 
-      function addNewsEvent() {
+      async function addNewsEvent() {
         if (!isAdminLoggedIn()) return;
         const title = document.getElementById("nTitle").value.trim();
         const desc = document.getElementById("nDesc").value.trim();
@@ -3306,21 +3678,29 @@
           return;
         }
         err.style.display = "none";
-        const data = newsLoad();
-        data.unshift({ id: Date.now(), title, tag, date, desc, pin });
-        newsSave(data);
+
+        const btn = document.querySelector(
+          "#newsAddPanel button[onclick='addNewsEvent()']",
+        );
+        btn.textContent = "Saving...";
+        btn.disabled = true;
+
+        await newsSaveItem({ id: Date.now(), title, tag, date, desc, pin });
+
         document.getElementById("nTitle").value = "";
         document.getElementById("nDesc").value = "";
         document.getElementById("nDate").value = "";
         document.getElementById("nPin").value = "no";
+        btn.textContent = "Save Event";
+        btn.disabled = false;
         toggleNewsPanel();
         renderNews();
       }
 
-      function deleteNewsEvent(id) {
+      async function deleteNewsEvent(id) {
         if (!isAdminLoggedIn()) return;
         if (!confirm("Remove this event?")) return;
-        newsSave(newsLoad().filter((e) => e.id !== id));
+        await newsDeleteItem(id);
         renderNews();
       }
 
@@ -3336,17 +3716,16 @@
           if (e.key === "Enter") submitAdminLogin();
         });
 
-      // ===== URL HASH TRIGGER — visit /#admin-login to open login =====
+      // ===== SECRET ADMIN URL — visit /#admin-login =====
       function checkAdminRoute() {
         if (window.location.hash === "#admin-login") {
-          history.replaceState(null, "", window.location.pathname); // clean URL immediately
+          history.replaceState(null, "", window.location.pathname);
           if (!isAdminLoggedIn()) showAdminLoginModal();
         }
       }
       checkAdminRoute();
       window.addEventListener("hashchange", checkAdminRoute);
 
-      // Initial render
       renderNews();
     </script>
   </body>
