@@ -2521,289 +2521,126 @@
     </section>
 
     <!-- ===== LATEST NEWS & EVENTS ===== -->
-    <!-- PLACED HERE: after Testimonials, before Gallery — most visible spot for parents -->
     <section id="news" class="sec-news" aria-labelledby="news-heading">
       <div style="max-width: 1100px; margin: 0 auto">
-        <!-- Header row: title on left, admin controls on right (hidden until logged in) -->
-        <div
-          style="
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-bottom: 28px;
-          "
-        >
-          <div>
-            <div class="section-label">Latest News</div>
-            <h2 class="section-title" id="news-heading">
-              School News &amp; <em>Events</em>
-            </h2>
-          </div>
-          <!-- ✅ ONLY these two elements — no duplicates -->
-          <!-- newsAdminControls: hidden by default, shown only after login -->
-          <div
-            id="newsAdminControls"
-            style="display: none; gap: 10px; align-items: center"
-          >
-            <button
-              onclick="toggleNewsPanel()"
-              id="newsToggleBtn"
-              style="
-                background: var(--saffron);
-                color: white;
-                border: none;
-                padding: 9px 18px;
-                border-radius: 10px;
-                font-size: 14px;
-                font-weight: 600;
-                cursor: pointer;
-                font-family: &quot;DM Sans&quot;, sans-serif;
-              "
-            >
-              + Add Event
-            </button>
-            <button
-              onclick="adminLogout()"
-              style="
-                background: transparent;
-                color: var(--gray-500);
-                border: 1px solid var(--gray-200);
-                padding: 8px 14px;
-                border-radius: 10px;
-                font-size: 13px;
-                font-weight: 500;
-                cursor: pointer;
-                font-family: &quot;DM Sans&quot;, sans-serif;
-              "
-            >
-              Logout
-            </button>
-          </div>
+        <div style="margin-bottom: 28px">
+          <div class="section-label">Latest News</div>
+          <h2 class="section-title" id="news-heading">
+            School News &amp; <em>Events</em>
+          </h2>
         </div>
 
-        <!-- ADD PANEL: hidden by default, only admin can see after login -->
         <div
-          id="newsAddPanel"
-          style="
-            display: none;
-            background: var(--gray-50);
-            border: 1px solid var(--gray-100);
-            border-radius: 16px;
-            padding: 28px;
-            margin-bottom: 28px;
-          "
-        >
-          <h3
-            style="
-              font-size: 18px;
-              font-weight: 700;
-              color: var(--navy);
-              margin-bottom: 16px;
-            "
-          >
-            Add News / Event
-          </h3>
-          <div
-            style="
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 14px;
-              margin-bottom: 14px;
-            "
-          >
-            <div>
-              <label
-                style="
-                  font-size: 13px;
-                  font-weight: 600;
-                  color: var(--gray-700);
-                  display: block;
-                  margin-bottom: 5px;
-                "
-                >Title *</label
-              >
-              <input
-                type="text"
-                id="nTitle"
-                placeholder="e.g. Annual Day 2026"
-                style="
-                  width: 100%;
-                  padding: 10px 12px;
-                  border: 1.5px solid var(--gray-200);
-                  border-radius: 10px;
-                  font-size: 14px;
-                  font-family: &quot;DM Sans&quot;, sans-serif;
-                  outline: none;
-                  background: white;
-                "
-              />
-            </div>
-            <div>
-              <label
-                style="
-                  font-size: 13px;
-                  font-weight: 600;
-                  color: var(--gray-700);
-                  display: block;
-                  margin-bottom: 5px;
-                "
-                >Category</label
-              >
-              <select
-                id="nTag"
-                style="
-                  width: 100%;
-                  padding: 10px 12px;
-                  border: 1.5px solid var(--gray-200);
-                  border-radius: 10px;
-                  font-size: 14px;
-                  font-family: &quot;DM Sans&quot;, sans-serif;
-                  outline: none;
-                  background: white;
-                "
-              >
-                <option value="event">Event</option>
-                <option value="announcement">Announcement</option>
-                <option value="achievement">Achievement</option>
-                <option value="holiday">Holiday</option>
-                <option value="exam">Exam</option>
-              </select>
-            </div>
-          </div>
-          <div
-            style="
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 14px;
-              margin-bottom: 14px;
-            "
-          >
-            <div>
-              <label
-                style="
-                  font-size: 13px;
-                  font-weight: 600;
-                  color: var(--gray-700);
-                  display: block;
-                  margin-bottom: 5px;
-                "
-                >Date</label
-              >
-              <input
-                type="date"
-                id="nDate"
-                style="
-                  width: 100%;
-                  padding: 10px 12px;
-                  border: 1.5px solid var(--gray-200);
-                  border-radius: 10px;
-                  font-size: 14px;
-                  font-family: &quot;DM Sans&quot;, sans-serif;
-                  outline: none;
-                  background: white;
-                "
-              />
-            </div>
-            <div>
-              <label
-                style="
-                  font-size: 13px;
-                  font-weight: 600;
-                  color: var(--gray-700);
-                  display: block;
-                  margin-bottom: 5px;
-                "
-                >Pin to top?</label
-              >
-              <select
-                id="nPin"
-                style="
-                  width: 100%;
-                  padding: 10px 12px;
-                  border: 1.5px solid var(--gray-200);
-                  border-radius: 10px;
-                  font-size: 14px;
-                  font-family: &quot;DM Sans&quot;, sans-serif;
-                  outline: none;
-                  background: white;
-                "
-              >
-                <option value="no">No</option>
-                <option value="yes">Yes – pin this item</option>
-              </select>
-            </div>
-          </div>
-          <div style="margin-bottom: 16px">
-            <label
-              style="
-                font-size: 13px;
-                font-weight: 600;
-                color: var(--gray-700);
-                display: block;
-                margin-bottom: 5px;
-              "
-              >Description *</label
-            >
-            <textarea
-              id="nDesc"
-              rows="3"
-              placeholder="Brief details about this news or event…"
-              style="
-                width: 100%;
-                padding: 10px 12px;
-                border: 1.5px solid var(--gray-200);
-                border-radius: 10px;
-                font-size: 14px;
-                font-family: &quot;DM Sans&quot;, sans-serif;
-                outline: none;
-                resize: vertical;
-                background: white;
-              "
-            ></textarea>
-          </div>
-          <button
-            onclick="addNewsEvent()"
-            style="
-              background: var(--saffron);
-              color: white;
-              border: none;
-              padding: 12px 24px;
-              border-radius: 10px;
-              font-size: 15px;
-              font-weight: 700;
-              cursor: pointer;
-              font-family: &quot;DM Sans&quot;, sans-serif;
-            "
-          >
-            Save Event
-          </button>
-          <span
-            id="newsErr"
-            style="
-              display: none;
-              font-size: 13px;
-              color: #e53935;
-              margin-left: 12px;
-            "
-            >Please fill in title and description.</span
-          >
-        </div>
-
-        <!-- NEWS CARDS GRID -->
-        <div
-          id="newsGrid"
           style="
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 18px;
           "
-        ></div>
+        >
+          <!-- Admissions Card -->
+          <div
+            style="
+              background: white;
+              border: 2px solid orange;
+              border-radius: 16px;
+              overflow: hidden;
+            "
+          >
+            <div
+              style="
+                padding: 18px 20px 14px;
+                border-bottom: 1px solid var(--gray-100);
+              "
+            >
+              <span
+                style="
+                  display: inline-block;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  padding: 3px 10px;
+                  border-radius: 20px;
+                  margin-bottom: 8px;
+                  background: #e8f5e9;
+                  color: #1b5e20;
+                "
+                >Announcement</span
+              >
+              <span
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 3px;
+                  font-size: 11px;
+                  background: #fff8e1;
+                  color: #b45309;
+                  padding: 2px 8px;
+                  border-radius: 20px;
+                  font-weight: 600;
+                  margin-left: 6px;
+                "
+                >📌 Pinned</span
+              >
+              <h3
+                style="
+                  font-size: 15px;
+                  font-weight: 600;
+                  color: var(--navy);
+                  line-height: 1.4;
+                  margin-bottom: 6px;
+                  margin-top: 8px;
+                "
+              >
+                🎉 Admissions Open 2026–27
+              </h3>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--gray-500);
+                  line-height: 1.6;
+                "
+              >
+                Bharathi Vidyalaya Nursery and Primary School, Arani is now
+                accepting admissions for the academic year 2026–27. Classes
+                available: Pre-KG, Nursery, LKG, UKG and Class 1 to 8. Seats are
+                limited — call or WhatsApp us at 8015748739 to enquire today.
+              </p>
+            </div>
+            <div
+              style="
+                padding: 12px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 8px;
+              "
+            >
+              <span style="font-size: 12px; color: var(--gray-500)"
+                >📅 Academic Year 2026–27</span
+              >
+              <a
+                href="#admission"
+                style="
+                  background: orange;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 6px 14px;
+                  font-size: 12px;
+                  font-weight: 600;
+                  text-decoration: none;
+                  font-family: &quot;DM Sans&quot;, sans-serif;
+                "
+                >Apply Now →</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ===== ADMIN LOGIN MODAL ===== -->
+    <!-- ===== ADMIN LOGIN MODAL =====
     <div
       id="newsLoginModal"
       style="
@@ -2922,7 +2759,7 @@
           Cancel
         </button>
       </div>
-    </div>
+    </div> -->
 
     <!-- ===== GALLERY ===== -->
     <section class="sec-gallery" aria-labelledby="gallery-heading">
@@ -4008,14 +3845,14 @@
         });
 
       // ===== SECRET ADMIN URL — visit /#admin-login =====
-      function checkAdminRoute() {
-        if (window.location.hash === "#admin-login") {
-          history.replaceState(null, "", window.location.pathname);
-          if (!isAdminLoggedIn()) showAdminLoginModal();
-        }
-      }
-      checkAdminRoute();
-      window.addEventListener("hashchange", checkAdminRoute);
+      // function checkAdminRoute() {
+      //   if (window.location.hash === "#admin-login") {
+      //     history.replaceState(null, "", window.location.pathname);
+      //     if (!isAdminLoggedIn()) showAdminLoginModal();
+      //   }
+      // }
+      // checkAdminRoute();
+      // window.addEventListener("hashchange", checkAdminRoute);
 
       renderNews();
     </script>
